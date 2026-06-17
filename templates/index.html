@@ -1255,12 +1255,6 @@ body.dark .lp-step-icon svg{stroke:#60A5FA}
 
 /* ── STATS — dark navy full-bleed ─────────────────────────── */
 .lp-stats{background:#0B1E3D;padding:84px 28px;position:relative;overflow:hidden}
-.lp-stats::before{
-  content:'';position:absolute;inset:0;pointer-events:none;
-  background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
-  background-size:56px 56px;
-}
 .lp-stats-grid{
   display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
   max-width:1040px;margin:0 auto;position:relative;z-index:1;
@@ -1344,12 +1338,6 @@ body.dark .lp-trust-icon svg{stroke:#60A5FA}
   background:linear-gradient(135deg,var(--lp-blue-700),var(--lp-navy));
   border-radius:24px;max-width:1040px;margin:0 auto;
   padding:64px 32px;color:#fff;position:relative;overflow:hidden;
-}
-.lp-cta-card::before{
-  content:'';position:absolute;inset:0;
-  background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
-  background-size:48px 48px;pointer-events:none;
 }
 .lp-cta-card h2{font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:800;letter-spacing:-.03em;margin-bottom:22px;position:relative;z-index:1}
 .lp-cta-card-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
@@ -1452,7 +1440,7 @@ body.dark .lp-trust-icon svg{stroke:#60A5FA}
 <!-- NAV -->
 <nav>
   <div class="nav-in">
-    <div class="nav-brand"><img class="brand-logo" src="/static/northbound-logo.png" alt="Northbound Capital" onerror="(function(e){var s=document.createElement('span');s.className='brand-mark';s.textContent='NC';e.replaceWith(s);})(this)"/><span>Northbound Capital</span></div>
+    <div class="nav-brand"><img class="brand-logo" src="/static/northbound-logo.png" alt="Northbound Capital" onerror="(function(e){var s=document.createElement('span');s.className='brand-mark';s.textContent='NC';e.replaceWith(s);})(this)"/><span>North<span style="color:var(--lp-blue-600)">bound</span> Capital</span></div>
     <div class="nav-tabs">
       <button class="ntab active" onclick="switchPage('intro')" data-i18n="nav-intro">Inicio</button>
       <button class="ntab" onclick="switchPage('builder')" data-i18n="nav-builder">Constructor por Perfil</button>
@@ -1477,7 +1465,6 @@ body.dark .lp-trust-icon svg{stroke:#60A5FA}
     <div class="lp-blob lp-blob1"></div>
     <div class="lp-blob lp-blob2"></div>
     <div class="lp-hero-inner">
-      <span class="lp-eyebrow" data-i18n="lp-eyebrow">Orientación para invertir · Sin costo</span>
       <h1 class="lp-h1" data-i18n="lp-h1">Haz crecer tu dinero<br/>sin ser experto en finanzas</h1>
       <p class="lp-hero-sub" data-i18n="lp-hero-sub">Te damos recomendaciones profesionales para que sepas exactamente en qué invertir. Tú decides y ejecutas, nosotros te orientamos en cada paso.</p>
       <div class="lp-hero-btns">
@@ -1606,7 +1593,6 @@ body.dark .lp-trust-icon svg{stroke:#60A5FA}
           <button onclick="switchPage('builder')" class="lp-btn-cta-main" data-i18n="icta-btn1">Construir mi portafolio</button>
           <button onclick="switchPage('analyzer')" class="lp-btn-cta-sec" data-i18n="icta-btn2">Analizar una empresa</button>
         </div>
-        <p class="lp-cta-note" data-i18n="lp-cta-note">Sin registro · Sin tarjeta · Sin costo</p>
       </div>
     </div>
   </div>
