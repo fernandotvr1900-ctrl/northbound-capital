@@ -1143,6 +1143,23 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
 }
 
 
+/* ── CONSISTENCIA VISUAL — gradiente suave en todas las páginas ── */
+#page-builder,#page-custom,#page-analyzer,#page-about,#page-contact{
+  background:linear-gradient(180deg,var(--lp-blue-50) 0px,var(--bg) 280px);
+}
+body.dark #page-builder,body.dark #page-custom,body.dark #page-analyzer,
+body.dark #page-about,body.dark #page-contact{
+  background:linear-gradient(180deg,rgba(11,30,61,.6) 0px,var(--bg) 300px);
+}
+/* Navy en headings principales de cada página */
+.hero-copy h1,.cp-hero h2,.az-hero h2,.contact-hero h2{color:var(--lp-navy)}
+body.dark .hero-copy h1,body.dark .cp-hero h2,body.dark .az-hero h2,body.dark .contact-hero h2{color:#EFF6FF}
+/* Padding consistente en heroes de página */
+.cp-hero{padding:56px 0 36px}
+.az-hero{padding:56px 0 36px}
+.contact-hero{padding:52px 0 32px}
+.hero{padding:56px 0 48px}
+
 /* ═══════════════════════════════════════════════════════════════
    LANDING PAGE — Nueva portada (prefijo lp-)
 ═══════════════════════════════════════════════════════════════ */
@@ -1221,7 +1238,7 @@ body.dark .lp-btn-sec{color:#CBD5E1;border-color:rgba(255,255,255,.2)}
   animation:lp-rise .8s ease both .62s;
 }
 body.dark .lp-hero-badge{background:#0d1f3c;border-color:rgba(255,255,255,.12);box-shadow:0 10px 30px rgba(0,0,0,.3)}
-.lp-badge-num{font-size:1.75rem;font-weight:800;color:var(--lp-blue-700);font-family:'JetBrains Mono',monospace;line-height:1}
+.lp-badge-num{font-size:1.75rem;font-weight:800;color:var(--lp-blue-700);line-height:1}
 body.dark .lp-badge-num{color:#60A5FA}
 .lp-badge-lbl{font-size:.76rem;color:var(--lp-gray);text-align:left;line-height:1.45}
 body.dark .lp-badge-lbl{color:#8BACC8}
@@ -1254,25 +1271,23 @@ body.dark .lp-step-icon svg{stroke:#60A5FA}
 .lp-step p{font-size:.84rem;color:var(--muted);line-height:1.7}
 
 /* ── STATS — dark navy full-bleed ─────────────────────────── */
-.lp-stats{
-  background:linear-gradient(180deg,var(--bg) 0,#0B1E3D 88px,#0B1E3D calc(100% - 88px),var(--bg) 100%);
-  padding:104px 28px;position:relative;overflow:visible;
-}
+.lp-stats{background:var(--bg);padding:56px 28px;position:relative}
 .lp-stats-grid{
   display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
   max-width:1040px;margin:0 auto;position:relative;z-index:1;
 }
 .lp-stat-card{
   text-align:center;padding:34px 16px;
-  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);
-  border-radius:18px;transition:transform .28s,background .28s;
+  background:var(--card);border:1px solid var(--border);
+  border-radius:18px;box-shadow:var(--shadow-card);transition:transform .28s,box-shadow .28s;
 }
-.lp-stat-card:hover{transform:translateY(-6px);background:rgba(255,255,255,.08)}
+.lp-stat-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
 .lp-stat-num{
-  font-size:clamp(2rem,4vw,2.8rem);font-weight:800;color:#fff;
-  margin-bottom:8px;font-family:'JetBrains Mono',monospace;letter-spacing:-.03em;line-height:1;
+  font-size:clamp(2rem,4vw,2.8rem);font-weight:800;color:var(--lp-blue-700);
+  margin-bottom:8px;letter-spacing:-.03em;line-height:1;
 }
-.lp-stat-lbl{font-size:.78rem;color:#8BACC8;font-weight:500;line-height:1.4}
+body.dark .lp-stat-num{color:#60A5FA}
+.lp-stat-lbl{font-size:.78rem;color:var(--muted);font-weight:500;line-height:1.4}
 
 /* ── COMPARATOR ───────────────────────────────────────────── */
 .lp-comparator{padding:56px 28px;background:var(--bg)}
@@ -1308,7 +1323,7 @@ body.dark .lp-chart-area{background:#0d1f3c;border-color:rgba(37,99,235,.25)}
 }
 body.dark .lp-chart-result{border-top-color:rgba(255,255,255,.1)}
 .lp-chart-result-lbl{font-size:.82rem;color:var(--muted);display:block;margin-bottom:6px}
-.lp-chart-result-num{font-size:2rem;font-weight:800;color:var(--lp-blue-700);font-family:'JetBrains Mono',monospace}
+.lp-chart-result-num{font-size:2rem;font-weight:800;color:var(--lp-blue-700)}
 body.dark .lp-chart-result-num{color:#60A5FA}
 .lp-disclaimer{
   text-align:center;font-size:.72rem;color:var(--lp-gray-l);
@@ -1508,7 +1523,7 @@ body.dark .lp-trust-icon svg{stroke:#60A5FA}
   <!-- ▸ STATS — dark navy ──────────────────────────────── -->
   <div class="lp-stats">
     <div class="lp-wrap">
-      <h2 class="lp-section-title lp-lt lp-reveal" data-i18n="lp-stats-h">Números que respaldan tu confianza</h2>
+      <h2 class="lp-section-title lp-reveal" data-i18n="lp-stats-h">Números que respaldan tu confianza</h2>
       <div class="lp-stats-grid">
         <div class="lp-stat-card lp-reveal">
           <div class="lp-stat-num" data-target="200" data-decimals="0" data-prefix="" data-suffix="+">0+</div>
