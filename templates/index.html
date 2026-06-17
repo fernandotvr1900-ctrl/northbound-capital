@@ -166,7 +166,7 @@ body.dark .mode-btn:hover{background:rgba(255,255,255,.04)}
 @media(max-width:900px){.bt-metrics{grid-template-columns:repeat(2,1fr)}}
 .bt-m{background:#fff;border:1px solid var(--border);border-radius:var(--radius-s);padding:14px 15px;box-shadow:var(--shadow-card)}
 .bt-ml{font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
-.bt-mv{font-size:1.18rem;font-weight:800;font-family:'JetBrains Mono',monospace;letter-spacing:-.02em}
+.bt-mv{font-size:1.18rem;font-weight:800;letter-spacing:-.02em}
 .bt-mv.port{color:var(--blue-600)}.bt-mv.bench{color:var(--muted)}
 .bt-mv-sub{font-size:.63rem;color:var(--muted);margin-top:3px}
 .bt-chart-wrap{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;margin-bottom:14px;box-shadow:var(--shadow-card)}
@@ -174,8 +174,8 @@ body.dark .mode-btn:hover{background:rgba(255,255,255,.04)}
 .bt-annual{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}
 .bt-yr{flex:1;min-width:68px;background:#fff;border:1px solid var(--border);border-radius:var(--radius-xs);padding:10px 10px;text-align:center}
 .bt-yr-lbl{font-size:.6rem;font-weight:700;color:var(--muted);margin-bottom:5px;letter-spacing:.04em;text-transform:uppercase}
-.bt-yr-p{font-size:.84rem;font-weight:800;font-family:'JetBrains Mono',monospace;letter-spacing:-.01em}
-.bt-yr-b{font-size:.68rem;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-top:3px}
+.bt-yr-p{font-size:.84rem;font-weight:800;letter-spacing:-.01em}
+.bt-yr-b{font-size:.68rem;color:var(--muted);margin-top:3px}
 /* ─── Print ──────────────────────────────────────── */
 @media print{
   nav,footer,.btn,.btn-row,.export-row,.bt-trigger,.lw,
@@ -265,7 +265,7 @@ h1 span{color:var(--accent-l)}
 /* ─── Steps ──────────────────────────────────────── */
 .steps{display:flex;align-items:center;justify-content:flex-start;gap:0;margin-bottom:0}
 .si{display:flex;align-items:center;gap:7px}
-.sn{width:27px;height:27px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;font-family:'JetBrains Mono',monospace;border:2px solid var(--border);color:var(--muted);transition:all .25s}
+.sn{width:27px;height:27px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;border:2px solid var(--border);color:var(--muted);transition:all .25s}
 .sn.active{background:var(--blue-600);border-color:var(--blue-600);color:#fff;box-shadow:0 0 12px rgba(37,99,235,.3)}
 .sn.done{background:#16a34a;border-color:#16a34a;color:#fff}
 .sl{font-size:.74rem;font-weight:500;color:var(--muted)}.sl.active{color:var(--text);font-weight:600}
@@ -358,7 +358,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 .kpi.kb::after{background:#6d28d9}
 .kpi.km::after{background:#b91c1c}  /* drawdown / negative */
 .klbl{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:10px;display:flex;align-items:center;gap:5px}
-.kval{font-size:1.85rem;font-weight:800;font-family:'JetBrains Mono',monospace;line-height:1;letter-spacing:-1px}
+.kval{font-size:1.85rem;font-weight:800;line-height:1;letter-spacing:-.03em}
 /* Semantic colors — meaningful, not decorative */
 .cg{color:#15803d}.ca{color:#b45309}.cb{color:#2563eb}.cp{color:#6d28d9}.cd{color:var(--muted)}.cr{color:#b91c1c}
 .knote{font-size:.64rem;color:var(--muted);margin-top:8px;line-height:1.5}
@@ -644,7 +644,8 @@ footer::before{display:none}
 .hstat-item{padding:0 24px}
 .hstat-item:first-child{padding-left:0}
 .hstat-item:not(:last-child){border-right:1px solid var(--border)}
-.hstat-n{font-family:'JetBrains Mono',monospace;font-size:1.4rem;font-weight:800;color:var(--text);line-height:1;letter-spacing:-.03em}
+.hstat-n{font-size:1.4rem;font-weight:800;color:var(--lp-navy);line-height:1;letter-spacing:-.03em}
+body.dark .hstat-n{color:#EFF6FF}
 .hstat-n .hstat-unit{font-size:.72rem;color:var(--muted);font-weight:600;margin-left:3px}
 .hstat-l{font-size:.68rem;color:var(--muted);margin-top:5px;letter-spacing:.01em}
 
@@ -656,7 +657,7 @@ footer::before{display:none}
 .hc-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
 .hc-badge{font-size:.58rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;
   border-radius:100px;background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0}
-.hc-ret{font-family:'JetBrains Mono',monospace;font-size:2.1rem;font-weight:800;color:#15803d;line-height:1;margin-bottom:4px;letter-spacing:-.02em}
+.hc-ret{font-size:2.1rem;font-weight:800;color:#15803d;line-height:1;margin-bottom:4px;letter-spacing:-.03em}
 .hc-ret-sub{font-size:.7rem;color:var(--muted);margin-bottom:20px}
 .hc-bars{display:flex;flex-direction:column;gap:10px}
 .hc-row{display:flex;align-items:center;gap:10px}
@@ -668,7 +669,7 @@ footer::before{display:none}
 .hc-metrics{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0}
 .hc-m{text-align:center;padding:0 4px}
 .hc-m:not(:last-child){border-right:1px solid var(--border)}
-.hc-mn{font-family:'JetBrains Mono',monospace;font-size:.92rem;font-weight:800;color:var(--text);letter-spacing:-.4px}
+.hc-mn{font-size:.92rem;font-weight:800;color:var(--text);letter-spacing:-.03em}
 .hc-ml{font-size:.6rem;color:var(--muted);margin-top:3px;letter-spacing:.03em}
 .hc-sparkline{margin-top:18px}
 .hc-sp-lbl{font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
@@ -690,7 +691,7 @@ footer::before{display:none}
 .ctx-steps{display:flex;align-items:center;gap:9px;flex-shrink:0}
 .ctx-step{font-size:.72rem;font-weight:600;color:var(--muted);display:inline-flex;align-items:center;gap:6px}
 .ctx-step .ctx-dot{width:18px;height:18px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;
-  font-size:.6rem;font-weight:800;font-family:'JetBrains Mono',monospace;border:1.5px solid var(--border);color:var(--muted)}
+  font-size:.6rem;font-weight:800;border:1.5px solid var(--border);color:var(--muted)}
 .ctx-step.done .ctx-dot{background:#16a34a;border-color:#16a34a;color:#fff}
 .ctx-step.active{color:var(--text)}
 .ctx-step.active .ctx-dot{background:var(--blue-600);border-color:var(--blue-600);color:#fff}
@@ -715,7 +716,7 @@ footer::before{display:none}
 .tax-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--border)}
 .tax-row:last-child{border-bottom:none}
 .tax-lbl{font-size:.78rem;color:var(--muted)}
-.tax-val{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:.88rem}
+.tax-val{font-weight:700;font-size:.88rem}
 
 /* ─── Quiz modal ─────────────────────────────────── */
 .quiz-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:500;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(6px)}
@@ -806,8 +807,8 @@ a.ci-rv:hover{color:var(--blue-600)}
 .method-list{display:grid;grid-template-columns:1fr 1fr;gap:20px 36px;margin-top:4px}
 @media(max-width:720px){.method-list{grid-template-columns:1fr;gap:18px}}
 .method-item{display:flex;gap:13px;align-items:flex-start}
-.mi-num{font-family:'JetBrains Mono',monospace;font-size:.66rem;font-weight:700;color:var(--blue-600);
-  flex-shrink:0;margin-top:3px;width:20px;letter-spacing:-.02em}
+.mi-num{font-size:.66rem;font-weight:700;color:var(--blue-600);
+  flex-shrink:0;margin-top:3px;width:20px;letter-spacing:.02em}
 .mi-body{min-width:0}
 .mi-title{font-size:.85rem;font-weight:700;color:var(--text);margin-bottom:3px;letter-spacing:-.01em}
 .mi-desc{font-size:.77rem;color:var(--muted);line-height:1.6}
@@ -1535,7 +1536,7 @@ body.dark .lp-trust-icon svg{stroke:#60A5FA}
         </div>
         <div class="lp-stat-card lp-reveal">
           <div class="lp-stat-num" data-target="100" data-decimals="0" data-prefix="" data-suffix="%">0%</div>
-          <div class="lp-stat-lbl" data-i18n="lp-stat3">Gratuito · Sin registro · Sin tarjeta</div>
+          <div class="lp-stat-lbl" data-i18n="lp-stat3">Gratuito · Sin registro · Sin costo</div>
         </div>
         <div class="lp-stat-card lp-reveal">
           <div class="lp-stat-num" data-target="2" data-decimals="0" data-prefix="" data-suffix="">0</div>
@@ -1591,7 +1592,7 @@ body.dark .lp-trust-icon svg{stroke:#60A5FA}
         <div class="lp-trust-item lp-reveal">
           <div class="lp-trust-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-5"/></svg></div>
           <h4 data-i18n="lp-t3-h">Sin costos ocultos</h4>
-          <p data-i18n="lp-t3-p">La plataforma es completamente gratuita. Sin suscripción, sin tarjeta de crédito, sin sorpresas.</p>
+          <p data-i18n="lp-t3-p">La plataforma es completamente gratuita. Sin suscripción ni costos ocultos de ningún tipo.</p>
         </div>
         <div class="lp-trust-item lp-reveal">
           <div class="lp-trust-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.3"/><path d="M15.2 20c0-2.2 1-4.1 2.4-5.3"/></svg></div>
@@ -1764,7 +1765,7 @@ body.dark .lp-trust-icon svg{stroke:#60A5FA}
       </div>
     </div>
     <div class="fg">
-      <label><span data-i18n="b-ipc-lbl">Exposición IPC México</span> — <strong id="ipcVal" style="color:var(--accent-l);font-family:'JetBrains Mono',monospace;">30%</strong></label>
+      <label><span data-i18n="b-ipc-lbl">Exposición IPC México</span> — <strong id="ipcVal" style="color:var(--accent-l);">30%</strong></label>
       <input type="range" id="ipcPct" min="0" max="60" value="30" oninput="document.getElementById('ipcVal').textContent=this.value+'%'"/>
       <div class="rlbl"><span data-i18n="b-ipc-min">0% — Solo S&P 500</span><span data-i18n="b-ipc-max">60% — Alta exposición IPC</span></div>
     </div>
@@ -1846,12 +1847,12 @@ body.dark .lp-trust-icon svg{stroke:#60A5FA}
       <div class="solver-card">
         <div class="solver-label" data-i18n="c-wt-lbl">Restricciones de pesos (%)</div>
         <div class="fg" style="margin-bottom:14px;">
-          <label><span data-i18n="c-wt-min">Peso mínimo por acción</span> — <strong id="minWVal" style="color:var(--accent-l);font-family:'JetBrains Mono',monospace;">2%</strong></label>
+          <label><span data-i18n="c-wt-min">Peso mínimo por acción</span> — <strong id="minWVal" style="color:var(--accent-l);">2%</strong></label>
           <input type="range" id="minWSlider" min="0" max="20" value="2" oninput="document.getElementById('minWVal').textContent=this.value+'%'"/>
           <div class="rlbl"><span>0%</span><span>20%</span></div>
         </div>
         <div class="fg" style="margin-bottom:0;">
-          <label><span data-i18n="c-wt-max">Peso máximo por acción</span> — <strong id="maxWVal" style="color:var(--accent-l);font-family:'JetBrains Mono',monospace;">40%</strong></label>
+          <label><span data-i18n="c-wt-max">Peso máximo por acción</span> — <strong id="maxWVal" style="color:var(--accent-l);">40%</strong></label>
           <input type="range" id="maxWSlider" min="10" max="100" value="40" oninput="document.getElementById('maxWVal').textContent=this.value+'%'"/>
           <div class="rlbl"><span>10%</span><span>100%</span></div>
         </div>
@@ -2272,7 +2273,7 @@ function renderResults(data){
     <div class="pb-banner">
       <div class="pb-icon ${pf}">${pf==='conservative'?'CON':pf==='moderate'?'MOD':'AGR'}</div>
       <div style="flex:1"><div class="pblbl">Perfil</div><div class="pbval ${pf}">${data.profile_label}</div></div>
-      <div style="text-align:right"><div class="pblbl">Capital</div><div style="font-size:1rem;font-weight:700;font-family:'JetBrains Mono',monospace;">$${fmt(data.investment_amount)}</div></div>
+      <div style="text-align:right"><div class="pblbl">Capital</div><div style="font-size:1rem;font-weight:700;">$${fmt(data.investment_amount)}</div></div>
     </div>
     <div class="export-row">
       <button class="btn-export pdf" onclick="exportPDF()"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>Exportar PDF</button>
@@ -2740,11 +2741,11 @@ function renderCustomResults(data, objective){
       </div>
       <div style="text-align:center">
         <div class="pblbl">Acciones</div>
-        <div style="font-size:1rem;font-weight:700;font-family:'JetBrains Mono',monospace;">${h.length}</div>
+        <div style="font-size:1rem;font-weight:700;">${h.length}</div>
       </div>
       <div style="text-align:right">
         <div class="pblbl">Capital</div>
-        <div style="font-size:1rem;font-weight:700;font-family:'JetBrains Mono',monospace;">$${fmt(data.investment_amount)}</div>
+        <div style="font-size:1rem;font-weight:700;">$${fmt(data.investment_amount)}</div>
       </div>
       <button class="btn btn-ghost btn-sm" onclick="document.getElementById('customResults').innerHTML='';window.scrollTo({top:0,behavior:'smooth'})" style="margin-left:14px;">Nueva optimización</button>
     </div>
@@ -3193,7 +3194,7 @@ const _i18n = {
     'lp-step3-h':'Ve crecer tu dinero','lp-step3-p':'Monitorea tu progreso con análisis claros, comparativas con el mercado y exporta tus resultados en PDF o Excel.',
     'lp-stats-h':'Números que respaldan tu confianza',
     'lp-stat1':'Empresas en el universo de análisis','lp-stat2':'Años de historial de mercado procesados',
-    'lp-stat3':'Gratuito · Sin registro · Sin tarjeta','lp-stat4':'Mercados: S&amp;P 500 EE.UU. + IPC México',
+    'lp-stat3':'Gratuito · Sin registro · Sin costo','lp-stat4':'Mercados: S&amp;P 500 EE.UU. + IPC México',
     'lp-comp-h':'Elige tu perfil y mira el resultado',
     'lp-comp-sub':'Simulación de cómo podría comportarse una inversión de $100,000 MXN siguiendo cada recomendación. La inversión la realizas tú.',
     'lp-con':'Conservador','lp-mod':'Moderado','lp-agr':'Agresivo',
@@ -3203,10 +3204,10 @@ const _i18n = {
     'lp-trust-h':'Invierte con tranquilidad',
     'lp-t1-h':'Orientación responsable','lp-t1-p':'Nuestras recomendaciones están basadas en modelos cuantitativos probados, no en especulación.',
     'lp-t2-h':'Datos encriptados','lp-t2-p':'Tu información está protegida con cifrado de nivel bancario. Sin venta de datos a terceros.',
-    'lp-t3-h':'Sin costos ocultos','lp-t3-p':'La plataforma es completamente gratuita. Sin suscripción, sin tarjeta de crédito, sin sorpresas.',
+    'lp-t3-h':'Sin costos ocultos','lp-t3-p':'La plataforma es completamente gratuita. Sin suscripción ni costos ocultos de ningún tipo.',
     'lp-t4-h':'Soporte real','lp-t4-p':'Detrás de la plataforma hay un equipo disponible para resolver tus dudas sobre finanzas e inversión.',
     'lp-cta-h':'Empieza a invertir con fundamento hoy',
-    'lp-cta-note':'Sin registro · Sin tarjeta · Sin costo'
+    'lp-cta-note':'Sin registro · Sin costo'
   },
   en:{
     /* ── Nav & side menu ── */
@@ -3344,10 +3345,10 @@ const _i18n = {
     'lp-trust-h':'Invest with peace of mind',
     'lp-t1-h':'Responsible guidance','lp-t1-p':'Our recommendations are based on proven quantitative models, not speculation.',
     'lp-t2-h':'Encrypted data','lp-t2-p':'Your information is protected with bank-grade encryption. No data sold to third parties.',
-    'lp-t3-h':'No hidden costs','lp-t3-p':'The platform is completely free. No subscription, no credit card, no surprises.',
+    'lp-t3-h':'No hidden costs','lp-t3-p':'The platform is completely free. No subscription, no hidden fees of any kind.',
     'lp-t4-h':'Real support','lp-t4-p':'Behind the platform is a team available to answer your finance and investment questions.',
     'lp-cta-h':'Start investing with a solid foundation today',
-    'lp-cta-note':'No registration · No card · Free'
+    'lp-cta-note':'No registration · Free'
   }
 };
 let _currentLang = localStorage.getItem('ac_lang') || 'es';
