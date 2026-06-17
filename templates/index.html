@@ -1011,7 +1011,7 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
 .intro-concept p{font-size:.82rem;color:var(--dim);line-height:1.78}
 
 /* Cards de conceptos (Rendimiento / Riesgo / Diversificación) */
-.intro-terms{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:0 0 40px}
+.intro-terms{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:0 0 40px;align-items:start}
 .intro-term{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--blue-600);border-radius:var(--radius);padding:22px 20px;text-align:left;box-shadow:var(--shadow-card)}
 .intro-term h4{font-size:1rem;font-weight:700;margin-bottom:10px;color:var(--text)}
 .intro-term p{font-size:.845rem;color:var(--muted);line-height:1.7}
@@ -1037,10 +1037,11 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
 .intro-step p{font-size:.8rem;color:var(--muted);line-height:1.65}
 
 /* CTA final */
-.intro-cta{text-align:center;padding:40px 32px;background:linear-gradient(135deg,var(--blue-50) 0%,var(--card) 100%);border:1px solid var(--blue-100);border-radius:var(--radius);margin-bottom:56px}
-.intro-cta h2{font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:800;letter-spacing:-.025em;margin-bottom:8px}
-.intro-cta p{font-size:.855rem;color:var(--muted);margin-bottom:22px}
-.intro-cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.intro-cta{text-align:center;padding:52px 40px;background:linear-gradient(135deg,var(--blue-50) 0%,var(--card) 100%);border:1px solid var(--blue-100);border-radius:var(--radius);margin-bottom:56px}
+.intro-cta h2{font-size:clamp(1.3rem,2.5vw,1.75rem);font-weight:800;letter-spacing:-.025em;margin-bottom:16px}
+.intro-cta p{font-size:.9rem;color:var(--muted);margin-bottom:28px}
+.intro-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.intro-cta-btns .btn{padding:13px 30px;font-size:.92rem;font-weight:600}
 
 @media(max-width:960px){
   .intro-hero-grid{grid-template-columns:1fr;gap:24px;padding:36px 0 28px}
@@ -1151,16 +1152,16 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
 <div class="sm-backdrop" id="smBackdrop" onclick="toggleMenu()"></div>
 <div class="side-menu" id="sideMenu">
   <div class="sm-head">
-    <span class="sm-head-title">Opciones</span>
-    <button class="sm-close-btn" onclick="toggleMenu()">Cerrar ✕</button>
+    <span class="sm-head-title" data-i18n="sm-title">Opciones</span>
+    <button class="sm-close-btn" onclick="toggleMenu()" data-i18n="sm-close">Cerrar ✕</button>
   </div>
   <!-- Apariencia -->
   <div class="sm-sect">
-    <div class="sm-sect-lbl">Apariencia</div>
+    <div class="sm-sect-lbl" data-i18n="sm-appear">Apariencia</div>
     <div class="sm-row">
       <div class="sm-row-info">
-        <div class="sm-row-label">Modo oscuro</div>
-        <div class="sm-row-sub">Cambia el tema de color</div>
+        <div class="sm-row-label" data-i18n="sm-dark">Modo oscuro</div>
+        <div class="sm-row-sub" data-i18n="sm-dark-sub">Cambia el tema de color</div>
       </div>
       <label class="tog-wrap">
         <input type="checkbox" class="tog-input" id="darkToggle" onchange="toggleMode()">
@@ -1174,8 +1175,8 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
     <div class="sm-sect-lbl">Idioma · Language</div>
     <div class="sm-row">
       <div class="sm-row-info">
-        <div class="sm-row-label">Selecciona el idioma</div>
-        <div class="sm-row-sub">Cambia el idioma de la plataforma</div>
+        <div class="sm-row-label" data-i18n="sm-lang">Selecciona el idioma</div>
+        <div class="sm-row-sub" data-i18n="sm-lang-sub">Cambia el idioma de la plataforma</div>
       </div>
       <div class="lang-pills">
         <button class="lang-pill active" data-lang="es" onclick="switchLang('es')">ES</button>
@@ -1185,24 +1186,24 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
   </div>
   <!-- Compartir -->
   <div class="sm-sect">
-    <div class="sm-sect-lbl">Compartir</div>
+    <div class="sm-sect-lbl" data-i18n="sm-share">Compartir</div>
     <button class="sm-action-btn" onclick="sharePage()">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-      Copiar enlace de la página
-      <span class="sm-copied" id="smCopied">¡Copiado!</span>
+      <span data-i18n="sm-copy">Copiar enlace de la página</span>
+      <span class="sm-copied" id="smCopied" data-i18n="sm-copied">¡Copiado!</span>
     </button>
   </div>
   <!-- Navegación rápida -->
   <div class="sm-sect">
-    <div class="sm-sect-lbl">Accesos directos</div>
-    <button class="sm-action-btn" onclick="switchPage('builder');toggleMenu()">Constructor por Perfil</button>
-    <button class="sm-action-btn" onclick="switchPage('custom');toggleMenu()">Crea tu Portafolio</button>
-    <button class="sm-action-btn" onclick="switchPage('analyzer');toggleMenu()">Análisis de Acciones</button>
-    <button class="sm-action-btn" onclick="switchPage('about');toggleMenu()">Sobre Northbound Capital</button>
+    <div class="sm-sect-lbl" data-i18n="sm-shortcuts">Accesos directos</div>
+    <button class="sm-action-btn" onclick="switchPage('builder');toggleMenu()" data-i18n="nav-builder">Constructor por Perfil</button>
+    <button class="sm-action-btn" onclick="switchPage('custom');toggleMenu()" data-i18n="nav-custom">Crea tu Portafolio</button>
+    <button class="sm-action-btn" onclick="switchPage('analyzer');toggleMenu()" data-i18n="nav-analyzer">Análisis de Acciones</button>
+    <button class="sm-action-btn" onclick="switchPage('about');toggleMenu()" data-i18n="nav-about">Sobre Northbound Capital</button>
   </div>
   <!-- Footer -->
   <div class="sm-footer">
-    <p class="sm-disclaimer">Datos de mercado provistos por Yahoo Finance. Esta plataforma es exclusivamente para fines educativos e informativos — no constituye asesoramiento financiero ni una oferta de inversión.</p>
+    <p class="sm-disclaimer" data-i18n="sm-disclaimer">Datos de mercado provistos por Yahoo Finance. Esta plataforma es exclusivamente para fines educativos e informativos — no constituye asesoramiento financiero ni una oferta de inversión.</p>
   </div>
 </div>
 
@@ -1333,36 +1334,35 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
       <div class="rb-dot"></div>
       <div class="rb-title">Portafolio <span>óptimo generado</span></div>
     </div>
-    <button class="btn btn-ghost btn-sm" onclick="resetBuilder()">← Nuevo Análisis</button>
+    <button class="btn btn-ghost btn-sm" onclick="resetBuilder()" data-i18n="b-reset">← Nuevo Análisis</button>
   </div>
 
   <div class="hero" id="mainHero">
     <!-- Columna izquierda: copy -->
     <div class="hero-copy" style="animation:fadeSlideUp .55s cubic-bezier(.22,1,.36,1) both">
-      <h1>Optimización de<br/><em>Portafolios</em></h1>
-      <p class="hero-sub">Dinos cuánto riesgo estás dispuesto a asumir y te decimos exactamente en qué empresas invertir y qué porcentaje de tu dinero poner en cada una, usando cinco años de datos reales del mercado.</p>
-      <p class="hero-insight" id="heroInsight">Una cartera diversificada no elimina el riesgo, pero mejora su eficiencia.</p>
+      <h1 data-i18n="bh1">Optimización de<br/><em>Portafolios</em></h1>
+      <p class="hero-sub" data-i18n="bsub">Dinos cuánto riesgo estás dispuesto a asumir y te decimos exactamente en qué empresas invertir y qué porcentaje de tu dinero poner en cada una, usando cinco años de datos reales del mercado.</p>
+      <p class="hero-insight" id="heroInsight" data-i18n="b-insight">Una cartera diversificada no elimina el riesgo, pero mejora su eficiencia.</p>
       <div class="hero-stats">
         <div class="hstat-item">
-          <div class="hstat-n">200<span class="hstat-unit">acciones</span></div>
-          <div class="hstat-l">Universo de análisis</div>
+          <div class="hstat-n">200<span class="hstat-unit" data-i18n="b-unit1">acciones</span></div>
+          <div class="hstat-l" data-i18n="b-stat1">Universo de análisis</div>
         </div>
         <div class="hstat-item">
-          <div class="hstat-n">5<span class="hstat-unit">años</span></div>
-          <div class="hstat-l">Historial de mercado</div>
+          <div class="hstat-n">5<span class="hstat-unit" data-i18n="b-unit2">años</span></div>
+          <div class="hstat-l" data-i18n="b-stat2">Historial de mercado</div>
         </div>
         <div class="hstat-item">
           <div class="hstat-n">S&P 500<span class="hstat-unit">+ IPC</span></div>
-          <div class="hstat-l">EE.UU. y México</div>
+          <div class="hstat-l" data-i18n="b-stat3">EE.UU. y México</div>
         </div>
       </div>
-      <!-- Steps progress -->
       <div class="steps" style="justify-content:flex-start;margin-top:26px;">
-        <div class="si"><div class="sn active" id="sn1">1</div><span class="sl active" id="sl1">Perfil</span></div>
+        <div class="si"><div class="sn active" id="sn1">1</div><span class="sl active" id="sl1" data-i18n="b-sp1">Perfil</span></div>
         <div class="sline" id="sl12"></div>
-        <div class="si"><div class="sn" id="sn2">2</div><span class="sl" id="sl2">Parámetros</span></div>
+        <div class="si"><div class="sn" id="sn2">2</div><span class="sl" id="sl2" data-i18n="b-sp2">Parámetros</span></div>
         <div class="sline" id="sl23"></div>
-        <div class="si"><div class="sn" id="sn3">3</div><span class="sl" id="sl3">Resultados</span></div>
+        <div class="si"><div class="sn" id="sn3">3</div><span class="sl" id="sl3" data-i18n="b-sp3">Resultados</span></div>
       </div>
     </div>
 
@@ -1377,13 +1377,13 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
       <div class="hc-bars" id="hcBars"></div>
       <div class="hc-divider"></div>
       <div class="hc-metrics">
-        <div class="hc-m"><div class="hc-mn ca" id="hcVol">14.2<span style="font-size:.65rem;color:var(--muted);">%</span></div><div class="hc-ml">Volatilidad</div></div>
-        <div class="hc-m"><div class="hc-mn cr" id="hcDD">−7.4<span style="font-size:.65rem;color:var(--muted);">%</span></div><div class="hc-ml">Max DD</div></div>
-        <div class="hc-m"><div class="hc-mn cp" id="hcBeta">0.82</div><div class="hc-ml">Beta S&P</div></div>
+        <div class="hc-m"><div class="hc-mn ca" id="hcVol">14.2<span style="font-size:.65rem;color:var(--muted);">%</span></div><div class="hc-ml" data-i18n="b-vol">Volatilidad</div></div>
+        <div class="hc-m"><div class="hc-mn cr" id="hcDD">−7.4<span style="font-size:.65rem;color:var(--muted);">%</span></div><div class="hc-ml" data-i18n="b-dd">Max DD</div></div>
+        <div class="hc-m"><div class="hc-mn cp" id="hcBeta">0.82</div><div class="hc-ml" data-i18n="b-beta">Beta S&P</div></div>
       </div>
       <!-- SVG sparkline -->
       <div class="hc-sparkline">
-        <div class="hc-sp-lbl">Retorno acumulado simulado</div>
+        <div class="hc-sp-lbl" data-i18n="b-sparkline">Retorno acumulado simulado</div>
         <svg viewBox="0 0 320 56" width="100%" height="56" style="overflow:visible">
           <defs>
             <linearGradient id="spGrad" x1="0" y1="0" x2="0" y2="1">
@@ -1406,86 +1406,91 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
     <div class="ctx-left">
       <div class="ctx-icon moderate" id="ctxIcon">MOD</div>
       <div>
-        <div class="ctx-lbl">Configurando estrategia</div>
-        <div class="ctx-title">Perfil <span id="ctxProfile">Moderado</span></div>
+        <div class="ctx-lbl" data-i18n="b-ctx-lbl">Configurando estrategia</div>
+        <div class="ctx-title"><span data-i18n="b-ctx-title">Perfil</span> <span id="ctxProfile">Moderado</span></div>
       </div>
     </div>
     <div class="ctx-steps">
       <span class="ctx-step done"><span class="ctx-dot">✓</span>Perfil</span>
       <span class="ctx-sep"></span>
-      <span class="ctx-step active"><span class="ctx-dot">2</span>Parámetros</span>
+      <span class="ctx-step active"><span class="ctx-dot">2</span><span data-i18n="b-sp2">Parámetros</span></span>
       <span class="ctx-sep"></span>
-      <span class="ctx-step"><span class="ctx-dot">3</span>Resultados</span>
+      <span class="ctx-step"><span class="ctx-dot">3</span><span data-i18n="b-sp3">Resultados</span></span>
     </div>
   </div>
 
   <div class="card" id="step1">
-    <div class="card-title" style="margin-bottom:5px;">Perfil de Inversionista</div>
-    <div class="card-sub">¿Cuánto riesgo estás dispuesto a asumir? Elige el perfil que refleje tu horizonte y tolerancia, o responde la encuesta si no estás seguro.</div>
+    <div class="card-title" style="margin-bottom:5px;" data-i18n="b-s1-title">Perfil de Inversionista</div>
+    <div class="card-sub" data-i18n="b-s1-sub">¿Cuánto riesgo estás dispuesto a asumir? Elige el perfil que refleje tu horizonte y tolerancia, o responde la encuesta si no estás seguro.</div>
     <!-- Quiz CTA banner -->
     <div onclick="openQuiz()" style="display:flex;align-items:center;justify-content:space-between;background:var(--blue-50);border:1px solid var(--blue-100);border-radius:10px;padding:14px 18px;margin-bottom:22px;cursor:pointer;transition:all .2s;" onmouseover="this.style.borderColor='#2563eb'" onmouseout="this.style.borderColor=''">
       <div>
-        <div style="font-size:.82rem;font-weight:700;color:var(--accent-l);margin-bottom:2px;">¿No sabes qué perfil eres?</div>
-        <div style="font-size:.75rem;color:var(--dim);">Responde 5 preguntas y descubre tu perfil de riesgo en 2 minutos</div>
+        <div style="font-size:.82rem;font-weight:700;color:var(--accent-l);margin-bottom:2px;" data-i18n="b-quiz-q">¿No sabes qué perfil eres?</div>
+        <div style="font-size:.75rem;color:var(--dim);" data-i18n="b-quiz-sub">Responde 5 preguntas y descubre tu perfil de riesgo en 2 minutos</div>
       </div>
       <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;margin-left:16px;">
-        <span style="font-size:.78rem;font-weight:700;color:var(--accent-l);white-space:nowrap;">Hacer encuesta</span>
+        <span style="font-size:.78rem;font-weight:700;color:var(--accent-l);white-space:nowrap;" data-i18n="b-quiz-btn">Hacer encuesta</span>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:var(--accent-l);"><polyline points="9 18 15 12 9 6"/></svg>
       </div>
     </div>
     <div class="pg">
       <div class="pc conservative sr sr-delay-1" onclick="selectProfile('conservative')">
-        <span class="pc-badge">Conservador</span>
-        <div class="pc-name">Preservación de Capital</div>
-        <div class="pc-desc">Prioriza la estabilidad y el flujo de dividendos. Horizonte de corto a mediano plazo.</div>
-        <div class="pc-tags"><span class="pc-tag">Mínima Varianza</span><span class="pc-tag">Beta &lt; 1</span><span class="pc-tag">Dividendos</span></div>
+        <span class="pc-badge" data-i18n="b-con-badge">Conservador</span>
+        <div class="pc-name" data-i18n="b-con-name">Preservación de Capital</div>
+        <div class="pc-desc" data-i18n="b-con-desc">Prioriza la estabilidad y el flujo de dividendos. Horizonte de corto a mediano plazo.</div>
+        <div class="pc-tags"><span class="pc-tag" data-i18n="b-con-t1">Mínima Varianza</span><span class="pc-tag">Beta &lt; 1</span><span class="pc-tag" data-i18n="b-con-t3">Dividendos</span></div>
       </div>
       <div class="pc moderate sr sr-delay-2" onclick="selectProfile('moderate')">
-        <span class="pc-badge">Moderado</span>
-        <div class="pc-name">Crecimiento Equilibrado</div>
-        <div class="pc-desc">Balance entre apreciación de capital y control del riesgo. Horizonte de largo plazo.</div>
-        <div class="pc-tags"><span class="pc-tag">Máx. Sharpe</span><span class="pc-tag">Diversificado</span><span class="pc-tag">Multiactivo</span></div>
+        <span class="pc-badge" data-i18n="b-mod-badge">Moderado</span>
+        <div class="pc-name" data-i18n="b-mod-name">Crecimiento Equilibrado</div>
+        <div class="pc-desc" data-i18n="b-mod-desc">Balance entre apreciación de capital y control del riesgo. Horizonte de largo plazo.</div>
+        <div class="pc-tags"><span class="pc-tag" data-i18n="b-mod-t1">Máx. Sharpe</span><span class="pc-tag" data-i18n="b-mod-t2">Diversificado</span><span class="pc-tag" data-i18n="b-mod-t3">Multiactivo</span></div>
       </div>
       <div class="pc aggressive sr sr-delay-3" onclick="selectProfile('aggressive')">
-        <span class="pc-badge">Agresivo</span>
-        <div class="pc-name">Maximización de Retorno</div>
-        <div class="pc-desc">Tolera alta volatilidad en búsqueda de retornos superiores al mercado.</div>
-        <div class="pc-tags"><span class="pc-tag">Alto Crecimiento</span><span class="pc-tag">Beta &gt; 1</span><span class="pc-tag">Tecnología</span></div>
+        <span class="pc-badge" data-i18n="b-agr-badge">Agresivo</span>
+        <div class="pc-name" data-i18n="b-agr-name">Maximización de Retorno</div>
+        <div class="pc-desc" data-i18n="b-agr-desc">Tolera alta volatilidad en búsqueda de retornos superiores al mercado.</div>
+        <div class="pc-tags"><span class="pc-tag" data-i18n="b-agr-t1">Alto Crecimiento</span><span class="pc-tag">Beta &gt; 1</span><span class="pc-tag" data-i18n="b-agr-t3">Tecnología</span></div>
       </div>
     </div>
-    <div class="btn-row"><button class="btn btn-primary" onclick="goStep2()" id="btnStep2" disabled>Continuar</button></div>
+    <div class="btn-row"><button class="btn btn-primary" onclick="goStep2()" id="btnStep2" disabled data-i18n="b-continue">Continuar</button></div>
   </div>
 
   <div class="card" id="step2" style="display:none;">
-    <div class="card-title">Parámetros del Portafolio</div>
-    <div class="card-sub">Define el capital, el horizonte de datos y la mezcla geográfica deseada.</div>
+    <div class="card-title" data-i18n="b-s2-title">Parámetros del Portafolio</div>
+    <div class="card-sub" data-i18n="b-s2-sub">Define el capital, el horizonte de datos y la mezcla geográfica deseada.</div>
     <div class="frow">
-      <div class="fg"><label>Capital a invertir (USD)</label><input type="number" id="amount" value="100000" min="1000" step="1000"/></div>
-      <div class="fg"><label>Historial para el modelo</label>
-        <select id="lookback"><option value="1">1 año</option><option value="2">2 años</option><option value="3">3 años</option><option value="5" selected>5 años</option></select>
+      <div class="fg"><label data-i18n="b-capital">Capital a invertir (USD)</label><input type="number" id="amount" value="100000" min="1000" step="1000"/></div>
+      <div class="fg"><label data-i18n="b-lookback">Historial para el modelo</label>
+        <select id="lookback">
+          <option value="1" data-i18n="b-yr1">1 año</option>
+          <option value="2" data-i18n="b-yr2">2 años</option>
+          <option value="3" data-i18n="b-yr3">3 años</option>
+          <option value="5" selected data-i18n="b-yr5">5 años</option>
+        </select>
       </div>
     </div>
     <div class="fg">
-      <label>Exposición IPC México — <strong id="ipcVal" style="color:var(--accent-l);font-family:'JetBrains Mono',monospace;">30%</strong></label>
+      <label><span data-i18n="b-ipc-lbl">Exposición IPC México</span> — <strong id="ipcVal" style="color:var(--accent-l);font-family:'JetBrains Mono',monospace;">30%</strong></label>
       <input type="range" id="ipcPct" min="0" max="60" value="30" oninput="document.getElementById('ipcVal').textContent=this.value+'%'"/>
-      <div class="rlbl"><span>0% — Solo S&P 500</span><span>60% — Alta exposición IPC</span></div>
+      <div class="rlbl"><span data-i18n="b-ipc-min">0% — Solo S&P 500</span><span data-i18n="b-ipc-max">60% — Alta exposición IPC</span></div>
     </div>
     <div class="btn-row">
-      <button class="btn btn-ghost" onclick="goStep1()">Atras</button>
-      <button class="btn btn-primary" onclick="runOptimization()">Optimizar Portafolio</button>
+      <button class="btn btn-ghost" onclick="goStep1()" data-i18n="b-back">Atras</button>
+      <button class="btn btn-primary" onclick="runOptimization()" data-i18n="b-optimize">Optimizar Portafolio</button>
     </div>
   </div>
 
   <div class="card lw" id="loading">
     <div class="spin"></div>
     <div>
-      <div style="font-size:.9rem;font-weight:600;text-align:center;margin-bottom:16px;color:var(--dim);">Calculando portafolio óptimo...</div>
+      <div style="font-size:.9rem;font-weight:600;text-align:center;margin-bottom:16px;color:var(--dim);" data-i18n="b-loading-h">Calculando portafolio óptimo...</div>
       <div class="llist">
-        <div class="li" id="ls1"><div class="ldot"></div>Descargando datos históricos</div>
-        <div class="li" id="ls2"><div class="ldot"></div>Calculando retornos y matriz de covarianza</div>
-        <div class="li" id="ls3"><div class="ldot"></div>Ejecutando optimización Markowitz</div>
-        <div class="li" id="ls4"><div class="ldot"></div>Construyendo frontera eficiente</div>
-        <div class="li" id="ls5"><div class="ldot"></div>Generando tesis de inversión</div>
+        <div class="li" id="ls1"><div class="ldot"></div><span data-i18n="b-ls1">Descargando datos históricos</span></div>
+        <div class="li" id="ls2"><div class="ldot"></div><span data-i18n="b-ls2">Calculando retornos y matriz de covarianza</span></div>
+        <div class="li" id="ls3"><div class="ldot"></div><span data-i18n="b-ls3">Ejecutando optimización Markowitz</span></div>
+        <div class="li" id="ls4"><div class="ldot"></div><span data-i18n="b-ls4">Construyendo frontera eficiente</span></div>
+        <div class="li" id="ls5"><div class="ldot"></div><span data-i18n="b-ls5">Generando tesis de inversión</span></div>
       </div>
     </div>
   </div>
@@ -1501,14 +1506,14 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
 <div class="page" id="page-custom">
 <div class="wrap">
   <div class="cp-hero">
-    <div class="eyebrow">Solver Markowitz · Selección Libre</div>
-    <h2>Crea tu propio portafolio</h2>
-    <p>Elige las acciones que quieras del S&P 500 o del IPC México. El motor Solver — igual al que usa Excel en problemas de optimización — calculará las proporciones óptimas usando la matriz de covarianza de Markowitz.</p>
+    <div class="eyebrow" data-i18n="c-eyebrow">Solver Markowitz · Selección Libre</div>
+    <h2 data-i18n="c-h2">Crea tu propio portafolio</h2>
+    <p data-i18n="c-p">Elige las acciones que quieras del S&P 500 o del IPC México. El motor Solver — igual al que usa Excel en problemas de optimización — calculará las proporciones óptimas usando la matriz de covarianza de Markowitz.</p>
   </div>
 
   <div class="card">
-    <div class="card-title">Selección de Activos</div>
-    <div class="card-sub">Busca en el catálogo o escribe <strong>cualquier ticker</strong> de Yahoo Finance — acciones, ETFs, ADRs, fondos. Mínimo 2, máximo 15.</div>
+    <div class="card-title" data-i18n="c-assets-title">Selección de Activos</div>
+    <div class="card-sub" data-i18n="c-assets-sub">Busca en el catálogo o escribe <strong>cualquier ticker</strong> de Yahoo Finance — acciones, ETFs, ADRs, fondos. Mínimo 2, máximo 15.</div>
 
     <div class="stock-search-wrap">
       <input type="text" class="stock-search" id="stockSearch"
@@ -1517,73 +1522,78 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
       <div class="autocomplete-list" id="acList"></div>
     </div>
     <div class="sel-hint">
-      Activos seleccionados: <span class="sel-count" id="selCount">0</span> / 15 &nbsp;·&nbsp;
-      Acciones del catálogo, ETFs y cualquier ticker válido de Yahoo Finance. Para IPC agrega <strong>.MX</strong> (ej: WALMEX.MX).
+      <span data-i18n="c-sel-pre">Activos seleccionados:</span> <span class="sel-count" id="selCount">0</span> / 15 &nbsp;·&nbsp;
+      <span data-i18n="c-sel-note">Acciones del catálogo, ETFs y cualquier ticker válido de Yahoo Finance. Para IPC agrega <strong>.MX</strong> (ej: WALMEX.MX).</span>
     </div>
     <div class="selected-stocks" id="selectedStocks">
-      <span style="font-size:.75rem;color:var(--muted);align-self:center;">Ninguna acción seleccionada — usa el buscador de arriba.</span>
+      <span style="font-size:.75rem;color:var(--muted);align-self:center;" data-i18n="c-none-sel">Ninguna acción seleccionada — usa el buscador de arriba.</span>
     </div>
 
-    <div class="sh" style="margin-top:24px;">Parámetros del Solver</div>
+    <div class="sh" style="margin-top:24px;" data-i18n="c-solver-title">Parámetros del Solver</div>
 
     <div class="solver-params">
       <div class="solver-card">
-        <div class="solver-label">Objetivo de optimización</div>
+        <div class="solver-label" data-i18n="c-obj-lbl">Objetivo de optimización</div>
         <div class="obj-options">
           <label class="obj-opt">
             <input type="radio" name="objective" value="max_sharpe" checked/>
-            <span><strong>Maximizar Sharpe Ratio</strong><em>Mejor retorno ajustado por riesgo (recomendado)</em></span>
+            <span><strong data-i18n="c-obj1-title">Maximizar Sharpe Ratio</strong><em data-i18n="c-obj1-sub">Mejor retorno ajustado por riesgo (recomendado)</em></span>
           </label>
           <label class="obj-opt">
             <input type="radio" name="objective" value="min_variance"/>
-            <span><strong>Minimizar Varianza</strong><em>Portafolio de menor riesgo posible</em></span>
+            <span><strong data-i18n="c-obj2-title">Minimizar Varianza</strong><em data-i18n="c-obj2-sub">Portafolio de menor riesgo posible</em></span>
           </label>
           <label class="obj-opt">
             <input type="radio" name="objective" value="equal_weight"/>
-            <span><strong>Pesos Iguales</strong><em>Distribución equitativa sin optimizar</em></span>
+            <span><strong data-i18n="c-obj3-title">Pesos Iguales</strong><em data-i18n="c-obj3-sub">Distribución equitativa sin optimizar</em></span>
           </label>
         </div>
       </div>
 
       <div class="solver-card">
-        <div class="solver-label">Restricciones de pesos (%)</div>
+        <div class="solver-label" data-i18n="c-wt-lbl">Restricciones de pesos (%)</div>
         <div class="fg" style="margin-bottom:14px;">
-          <label>Peso mínimo por acción — <strong id="minWVal" style="color:var(--accent-l);font-family:'JetBrains Mono',monospace;">2%</strong></label>
+          <label><span data-i18n="c-wt-min">Peso mínimo por acción</span> — <strong id="minWVal" style="color:var(--accent-l);font-family:'JetBrains Mono',monospace;">2%</strong></label>
           <input type="range" id="minWSlider" min="0" max="20" value="2" oninput="document.getElementById('minWVal').textContent=this.value+'%'"/>
           <div class="rlbl"><span>0%</span><span>20%</span></div>
         </div>
         <div class="fg" style="margin-bottom:0;">
-          <label>Peso máximo por acción — <strong id="maxWVal" style="color:var(--accent-l);font-family:'JetBrains Mono',monospace;">40%</strong></label>
+          <label><span data-i18n="c-wt-max">Peso máximo por acción</span> — <strong id="maxWVal" style="color:var(--accent-l);font-family:'JetBrains Mono',monospace;">40%</strong></label>
           <input type="range" id="maxWSlider" min="10" max="100" value="40" oninput="document.getElementById('maxWVal').textContent=this.value+'%'"/>
           <div class="rlbl"><span>10%</span><span>100%</span></div>
         </div>
       </div>
 
       <div class="solver-card">
-        <div class="solver-label">Capital y horizonte</div>
-        <div class="fg" style="margin-bottom:14px;"><label>Capital a invertir (USD)</label><input type="number" id="cpAmount" value="100000" min="1000" step="1000"/></div>
-        <div class="fg" style="margin-bottom:0;"><label>Historial para el modelo</label>
-          <select id="cpLookback"><option value="1">1 año</option><option value="2">2 años</option><option value="3">3 años</option><option value="5" selected>5 años</option></select>
+        <div class="solver-label" data-i18n="c-cap-lbl">Capital y horizonte</div>
+        <div class="fg" style="margin-bottom:14px;"><label data-i18n="b-capital">Capital a invertir (USD)</label><input type="number" id="cpAmount" value="100000" min="1000" step="1000"/></div>
+        <div class="fg" style="margin-bottom:0;"><label data-i18n="b-lookback">Historial para el modelo</label>
+          <select id="cpLookback">
+            <option value="1" data-i18n="b-yr1">1 año</option>
+            <option value="2" data-i18n="b-yr2">2 años</option>
+            <option value="3" data-i18n="b-yr3">3 años</option>
+            <option value="5" selected data-i18n="b-yr5">5 años</option>
+          </select>
         </div>
       </div>
     </div>
 
     <div class="btn-row" style="margin-top:22px;">
-      <button class="btn btn-ghost btn-sm" onclick="clearSelection()">Limpiar selección</button>
-      <button class="btn btn-primary" onclick="runCustomOptimize()" id="btnCustomOpt" disabled>Calcular con Solver</button>
+      <button class="btn btn-ghost btn-sm" onclick="clearSelection()" data-i18n="c-clear">Limpiar selección</button>
+      <button class="btn btn-primary" onclick="runCustomOptimize()" id="btnCustomOpt" disabled data-i18n="c-calc">Calcular con Solver</button>
     </div>
   </div>
 
   <div class="card lw" id="loading-c">
     <div class="spin"></div>
     <div>
-      <div style="font-size:.9rem;font-weight:600;text-align:center;margin-bottom:16px;color:var(--dim);">Ejecutando Solver de Markowitz...</div>
+      <div style="font-size:.9rem;font-weight:600;text-align:center;margin-bottom:16px;color:var(--dim);" data-i18n="c-loading-h">Ejecutando Solver de Markowitz...</div>
       <div class="llist">
-        <div class="li" id="lc1"><div class="ldot"></div>Descargando precios históricos de las acciones seleccionadas</div>
-        <div class="li" id="lc2"><div class="ldot"></div>Construyendo matriz de covarianza (Σ) y vector de retornos (μ)</div>
-        <div class="li" id="lc3"><div class="ldot"></div>Ejecutando optimización SLSQP — minimizando función objetivo</div>
-        <div class="li" id="lc4"><div class="ldot"></div>Calculando frontera eficiente (40 puntos)</div>
-        <div class="li" id="lc5"><div class="ldot"></div>Computando contribución marginal al riesgo y matrices</div>
+        <div class="li" id="lc1"><div class="ldot"></div><span data-i18n="c-lc1">Descargando precios históricos de las acciones seleccionadas</span></div>
+        <div class="li" id="lc2"><div class="ldot"></div><span data-i18n="c-lc2">Construyendo matriz de covarianza (Σ) y vector de retornos (μ)</span></div>
+        <div class="li" id="lc3"><div class="ldot"></div><span data-i18n="c-lc3">Ejecutando optimización SLSQP — minimizando función objetivo</span></div>
+        <div class="li" id="lc4"><div class="ldot"></div><span data-i18n="c-lc4">Calculando frontera eficiente (40 puntos)</span></div>
+        <div class="li" id="lc5"><div class="ldot"></div><span data-i18n="c-lc5">Computando contribución marginal al riesgo y matrices</span></div>
       </div>
     </div>
   </div>
@@ -1599,16 +1609,16 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
 <div class="page" id="page-analyzer">
 <div class="wrap">
   <div class="az-hero">
-    <div class="eyebrow">Análisis Fundamental + Técnico</div>
-    <h2>Análisis de Acciones</h2>
-    <p>Ingresa cualquier ticker del <strong>S&P 500</strong> o del <strong>IPC México</strong> (añade .MX) para obtener un análisis de valuación, señal de inversión y recomendación fundamentada.</p>
+    <div class="eyebrow" data-i18n="a-eyebrow">Análisis Fundamental + Técnico</div>
+    <h2 data-i18n="a-h2">Análisis de Acciones</h2>
+    <p data-i18n="a-p">Ingresa cualquier ticker del <strong>S&P 500</strong> o del <strong>IPC México</strong> (añade .MX) para obtener un análisis de valuación, señal de inversión y recomendación fundamentada.</p>
     <div class="sbar">
       <input type="text" id="tickerInput" placeholder="Ej: AAPL, MSFT, AMXL.MX, GFNORTEO.MX" onkeydown="if(event.key==='Enter')analyzeStocks()"/>
-      <button class="btn btn-primary" onclick="analyzeStocks()" id="btnAnalyze">Analizar</button>
+      <button class="btn btn-primary" onclick="analyzeStocks()" id="btnAnalyze" data-i18n="a-btn">Analizar</button>
     </div>
-    <div class="shint">Separa múltiples tickers con comas. Para acciones mexicanas del IPC agrega el sufijo <strong>.MX</strong> (ej: WALMEX.MX). Máximo 8 por consulta.</div>
+    <div class="shint" data-i18n="a-hint">Separa múltiples tickers con comas. Para acciones mexicanas del IPC agrega el sufijo <strong>.MX</strong> (ej: WALMEX.MX). Máximo 8 por consulta.</div>
   </div>
-  <div class="card lw" id="loading-a"><div class="spin"></div><div style="font-size:.88rem;font-weight:600;color:var(--dim);">Consultando datos fundamentales...</div></div>
+  <div class="card lw" id="loading-a"><div class="spin"></div><div style="font-size:.88rem;font-weight:600;color:var(--dim);" data-i18n="a-loading">Consultando datos fundamentales...</div></div>
   <div class="err-box" id="errBoxA"></div>
   <div class="ag" id="analysisResults"></div>
 </div>
@@ -1620,52 +1630,52 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
 <div class="page" id="page-about">
 <div class="wrap">
   <div class="contact-hero">
-    <div class="eyebrow">Sobre Northbound</div>
-    <h2>Inversión guiada por evidencia, no por intuición</h2>
-    <p>Northbound Capital acerca la optimización cuantitativa de portafolios —tradicionalmente reservada a inversionistas institucionales— a cualquier persona, de forma completamente gratuita.</p>
+    <div class="eyebrow" data-i18n="ab-eyebrow">Sobre Northbound</div>
+    <h2 data-i18n="ab-h2">Inversión guiada por evidencia, no por intuición</h2>
+    <p data-i18n="ab-p">Northbound Capital acerca la optimización cuantitativa de portafolios —tradicionalmente reservada a inversionistas institucionales— a cualquier persona, de forma completamente gratuita.</p>
   </div>
 
   <!-- Filosofía + Por qué -->
   <div class="about-sections">
     <div class="about-block">
-      <div class="ab-label">Investment Philosophy</div>
-      <p class="ab-quote">Las decisiones de inversión deben fundamentarse en datos, diversificación y una evaluación objetiva del riesgo, no en emociones o especulación de corto plazo.</p>
+      <div class="ab-label" data-i18n="ab-phil-lbl">Investment Philosophy</div>
+      <p class="ab-quote" data-i18n="ab-phil-quote">Las decisiones de inversión deben fundamentarse en datos, diversificación y una evaluación objetiva del riesgo, no en emociones o especulación de corto plazo.</p>
     </div>
     <div class="about-block">
-      <div class="ab-label">¿Por qué Northbound Capital?</div>
-      <p class="ab-text">Northbound Capital nació con el objetivo de acercar herramientas de optimización cuantitativa tradicionalmente reservadas para inversionistas institucionales a cualquier persona interesada en construir mejores portafolios. <strong>La plataforma es completamente gratuita</strong> y fue creada con el afán de ayudar a las personas a tomar mejores decisiones de inversión mediante análisis objetivos y herramientas basadas en datos.</p>
+      <div class="ab-label" data-i18n="ab-why-lbl">¿Por qué Northbound Capital?</div>
+      <p class="ab-text" data-i18n="ab-why-text">Northbound Capital nació con el objetivo de acercar herramientas de optimización cuantitativa tradicionalmente reservadas para inversionistas institucionales a cualquier persona interesada en construir mejores portafolios. <strong>La plataforma es completamente gratuita</strong> y fue creada con el afán de ayudar a las personas a tomar mejores decisiones de inversión mediante análisis objetivos y herramientas basadas en datos.</p>
     </div>
   </div>
 
   <!-- Metodología explicativa -->
   <div class="method-card">
-    <div class="ab-label">Metodología</div>
-    <p class="method-intro">Cada portafolio se construye con el mismo aparato cuantitativo que utilizan los gestores institucionales. Estas son las técnicas que operan detrás de cada resultado y lo que cada una aporta:</p>
+    <div class="ab-label" data-i18n="ab-meth-lbl">Metodología</div>
+    <p class="method-intro" data-i18n="ab-meth-intro">Cada portafolio se construye con el mismo aparato cuantitativo que utilizan los gestores institucionales. Estas son las técnicas que operan detrás de cada resultado y lo que cada una aporta:</p>
     <div class="method-list">
       <div class="method-item"><div class="mi-num">01</div><div class="mi-body">
         <div class="mi-title">Markowitz Mean-Variance Optimization</div>
-        <div class="mi-desc">Resuelve la combinación de activos que ofrece el mayor retorno esperado para un nivel de riesgo dado, minimizando la varianza del portafolio.</div></div></div>
+        <div class="mi-desc" data-i18n="ab-m1">Resuelve la combinación de activos que ofrece el mayor retorno esperado para un nivel de riesgo dado, minimizando la varianza del portafolio.</div></div></div>
       <div class="method-item"><div class="mi-num">02</div><div class="mi-body">
         <div class="mi-title">Efficient Frontier Analysis</div>
-        <div class="mi-desc">Traza el conjunto de portafolios óptimos y ubica visualmente dónde se sitúa tu asignación frente al mejor equilibrio riesgo-retorno posible.</div></div></div>
+        <div class="mi-desc" data-i18n="ab-m2">Traza el conjunto de portafolios óptimos y ubica visualmente dónde se sitúa tu asignación frente al mejor equilibrio riesgo-retorno posible.</div></div></div>
       <div class="method-item"><div class="mi-num">03</div><div class="mi-body">
         <div class="mi-title">Sharpe Ratio Optimization</div>
-        <div class="mi-desc">Maximiza el retorno obtenido por cada unidad de riesgo total asumido, el estándar para medir la eficiencia de una cartera.</div></div></div>
+        <div class="mi-desc" data-i18n="ab-m3">Maximiza el retorno obtenido por cada unidad de riesgo total asumido, el estándar para medir la eficiencia de una cartera.</div></div></div>
       <div class="method-item"><div class="mi-num">04</div><div class="mi-body">
         <div class="mi-title">Sortino Ratio Analysis</div>
-        <div class="mi-desc">Evalúa el retorno penalizando únicamente la volatilidad negativa, relevante para inversionistas con aversión a las pérdidas.</div></div></div>
+        <div class="mi-desc" data-i18n="ab-m4">Evalúa el retorno penalizando únicamente la volatilidad negativa, relevante para inversionistas con aversión a las pérdidas.</div></div></div>
       <div class="method-item"><div class="mi-num">05</div><div class="mi-body">
         <div class="mi-title">Calmar Ratio Analysis</div>
-        <div class="mi-desc">Relaciona el retorno anualizado con la peor caída histórica (máximo drawdown), midiendo la resiliencia ante escenarios adversos.</div></div></div>
+        <div class="mi-desc" data-i18n="ab-m5">Relaciona el retorno anualizado con la peor caída histórica (máximo drawdown), midiendo la resiliencia ante escenarios adversos.</div></div></div>
       <div class="method-item"><div class="mi-num">06</div><div class="mi-body">
         <div class="mi-title">Historical Backtesting</div>
-        <div class="mi-desc">Simula el desempeño del portafolio con datos reales de mercado y lo compara contra su benchmark a lo largo del tiempo.</div></div></div>
+        <div class="mi-desc" data-i18n="ab-m6">Simula el desempeño del portafolio con datos reales de mercado y lo compara contra su benchmark a lo largo del tiempo.</div></div></div>
       <div class="method-item"><div class="mi-num">07</div><div class="mi-body">
         <div class="mi-title">Tax-Adjusted Returns</div>
-        <div class="mi-desc">Estima el rendimiento neto después de impuestos sobre ganancias de capital, acercando las cifras al retorno que realmente recibes.</div></div></div>
+        <div class="mi-desc" data-i18n="ab-m7">Estima el rendimiento neto después de impuestos sobre ganancias de capital, acercando las cifras al retorno que realmente recibes.</div></div></div>
       <div class="method-item"><div class="mi-num">08</div><div class="mi-body">
         <div class="mi-title">Risk-Return Optimization</div>
-        <div class="mi-desc">Integra todas las métricas anteriores para encontrar el balance que mejor se ajusta a tu perfil y horizonte de inversión.</div></div></div>
+        <div class="mi-desc" data-i18n="ab-m8">Integra todas las métricas anteriores para encontrar el balance que mejor se ajusta a tu perfil y horizonte de inversión.</div></div></div>
     </div>
   </div>
 </div>
@@ -1677,9 +1687,9 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
 <div class="page" id="page-contact">
 <div class="wrap">
   <div class="contact-hero">
-    <div class="eyebrow">Contacto</div>
-    <h2>Construyamos algo que valga la pena</h2>
-    <p>El perfil profesional detrás de Northbound Capital. Conectemos por LinkedIn o correo para colaboraciones, dudas sobre la metodología o proyectos.</p>
+    <div class="eyebrow" data-i18n="ct-eyebrow">Contacto</div>
+    <h2 data-i18n="ct-h2">Construyamos algo que valga la pena</h2>
+    <p data-i18n="ct-p">El perfil profesional detrás de Northbound Capital. Conectemos por LinkedIn o correo para colaboraciones, dudas sobre la metodología o proyectos.</p>
   </div>
 
   <!-- Tarjeta de perfil -->
@@ -1689,12 +1699,12 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
       <img src="/static/Fernando%20Tovar.jpg" alt="Luis Fernando Tovar Berrocal"
         onload="document.getElementById('cpFallback').style.display='none'"
         onerror="this.style.display='none'"/>
-      <span class="cp-tag">Fundador</span>
+      <span class="cp-tag" data-i18n="ct-founder">Fundador</span>
     </div>
     <div class="about-info">
       <div class="ci-role">Founder &amp; Portfolio Strategist</div>
       <div class="ci-name">Luis Fernando Tovar Berrocal</div>
-      <div class="ci-academic">Estudiante de Finanzas · Tecnológico de Monterrey</div>
+      <div class="ci-academic" data-i18n="ct-academic">Estudiante de Finanzas · Tecnológico de Monterrey</div>
       <div class="ci-rows">
         <div class="ci-row">
           <div class="ci-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 18.34V10.4H5.67v7.94h2.67zM7 9.24a1.55 1.55 0 1 0 0-3.1 1.55 1.55 0 0 0 0 3.1zm11.34 9.1v-4.36c0-2.33-1.25-3.41-2.91-3.41a2.51 2.51 0 0 0-2.28 1.25v-1.07h-2.66c.04.75 0 7.94 0 7.94h2.66v-4.43c0-.24.02-.48.09-.65.19-.48.62-.97 1.35-.97.96 0 1.34.72 1.34 1.78v4.27h2.67z"/></svg></div>
@@ -1702,22 +1712,22 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
         </div>
         <div class="ci-row">
           <div class="ci-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-          <div><div class="ci-rl">Correo</div><a class="ci-rv" href="mailto:fernandotvr1900@gmail.com">fernandotvr1900@gmail.com</a></div>
+          <div><div class="ci-rl" data-i18n="ct-email-lbl">Correo</div><a class="ci-rv" href="mailto:fernandotvr1900@gmail.com">fernandotvr1900@gmail.com</a></div>
         </div>
         <div class="ci-row">
           <div class="ci-ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <div><div class="ci-rl">Ubicación</div><div class="ci-rv">Ciudad de México, México</div></div>
+          <div><div class="ci-rl" data-i18n="ct-loc-lbl">Ubicación</div><div class="ci-rv" data-i18n="ct-loc">Ciudad de México, México</div></div>
         </div>
       </div>
       <div class="ci-actions" style="display:flex;gap:10px;margin-top:24px;flex-wrap:wrap;">
-        <a class="btn btn-primary" href="mailto:fernandotvr1900@gmail.com">Enviar correo</a>
-        <a class="btn btn-ghost" href="https://www.linkedin.com/in/luisfernandotovarberrocal" target="_blank" rel="noopener">Ver LinkedIn</a>
+        <a class="btn btn-primary" href="mailto:fernandotvr1900@gmail.com" data-i18n="ct-btn-email">Enviar correo</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/luisfernandotovarberrocal" target="_blank" rel="noopener" data-i18n="ct-btn-li">Ver LinkedIn</a>
       </div>
     </div>
   </div>
 
   <!-- Disponibilidad -->
-  <div class="availability">Disponible para colaboraciones académicas, proyectos fintech y análisis de portafolios.</div>
+  <div class="availability" data-i18n="ct-availability">Disponible para colaboraciones académicas, proyectos fintech y análisis de portafolios.</div>
 </div>
 </div>
 
@@ -2765,8 +2775,16 @@ function sharePage(){
 
 const _i18n = {
   es:{
+    /* ── Nav & side menu ── */
     'nav-intro':'Inicio','nav-builder':'Constructor por Perfil','nav-custom':'Crea tu Portafolio',
     'nav-analyzer':'Análisis de Acciones','nav-about':'Sobre Northbound','nav-contact':'Contacto',
+    'sm-title':'Opciones','sm-close':'Cerrar ✕',
+    'sm-appear':'Apariencia','sm-dark':'Modo oscuro','sm-dark-sub':'Cambia el tema de color',
+    'sm-lang':'Selecciona el idioma','sm-lang-sub':'Cambia el idioma de la plataforma',
+    'sm-share':'Compartir','sm-copy':'Copiar enlace de la página','sm-copied':'¡Copiado!',
+    'sm-shortcuts':'Accesos directos',
+    'sm-disclaimer':'Datos de mercado provistos por Yahoo Finance. Esta plataforma es exclusivamente para fines educativos e informativos — no constituye asesoramiento financiero ni una oferta de inversión.',
+    /* ── Intro ── */
     'ih1':'Invierte con criterio,<br/><em>no con intuición</em>',
     'isub':'Northbound Capital analiza el mercado con modelos matemáticos para decirte exactamente en qué invertir y en qué proporción, adaptado a tu nivel de riesgo. Sin experiencia previa necesaria.',
     'ibtn':'Comenzar análisis',
@@ -2783,11 +2801,105 @@ const _i18n = {
     'ihow1-h':'Define cuánto riesgo puedes asumir','ihow1-p':'Indica si prefieres proteger tu capital ante todo (conservador), buscar un equilibrio entre seguridad y crecimiento (moderado), o maximizar el rendimiento aceptando mayor variabilidad (agresivo).',
     'ihow2-h':'El motor analiza más de 200 empresas','ihow2-p':'Procesa cinco años de datos reales del mercado — acciones del S&P 500 de EE.UU. y del IPC de México — y calcula matemáticamente la combinación que ofrece el mayor rendimiento por cada unidad de riesgo.',
     'ihow3-h':'Recibes instrucciones claras y precisas','ihow3-p':'Sabrás exactamente qué empresas comprar y qué porcentaje destinar a cada una. Puedes ver proyecciones históricas, comparativas con el mercado y exportar el resultado en PDF o Excel.',
-    'icta-h':'Empieza a invertir con fundamento','icta-btn1':'Construir mi portafolio','icta-btn2':'Analizar una empresa'
+    'icta-h':'Empieza a invertir con fundamento','icta-btn1':'Construir mi portafolio','icta-btn2':'Analizar una empresa',
+    /* ── Builder ── */
+    'bh1':'Optimización de<br/><em>Portafolios</em>',
+    'bsub':'Dinos cuánto riesgo estás dispuesto a asumir y te decimos exactamente en qué empresas invertir y qué porcentaje de tu dinero poner en cada una, usando cinco años de datos reales del mercado.',
+    'b-insight':'Una cartera diversificada no elimina el riesgo, pero mejora su eficiencia.',
+    'b-unit1':'acciones','b-stat1':'Universo de análisis',
+    'b-unit2':'años','b-stat2':'Historial de mercado','b-stat3':'EE.UU. y México',
+    'b-sp1':'Perfil','b-sp2':'Parámetros','b-sp3':'Resultados',
+    'b-vol':'Volatilidad','b-dd':'Max DD','b-beta':'Beta S&P','b-sparkline':'Retorno acumulado simulado',
+    'b-reset':'← Nuevo Análisis',
+    'b-ctx-lbl':'Configurando estrategia','b-ctx-title':'Perfil',
+    'b-s1-title':'Perfil de Inversionista',
+    'b-s1-sub':'¿Cuánto riesgo estás dispuesto a asumir? Elige el perfil que refleje tu horizonte y tolerancia, o responde la encuesta si no estás seguro.',
+    'b-quiz-q':'¿No sabes qué perfil eres?',
+    'b-quiz-sub':'Responde 5 preguntas y descubre tu perfil de riesgo en 2 minutos',
+    'b-quiz-btn':'Hacer encuesta',
+    'b-con-badge':'Conservador','b-con-name':'Preservación de Capital',
+    'b-con-desc':'Prioriza la estabilidad y el flujo de dividendos. Horizonte de corto a mediano plazo.',
+    'b-con-t1':'Mínima Varianza','b-con-t3':'Dividendos',
+    'b-mod-badge':'Moderado','b-mod-name':'Crecimiento Equilibrado',
+    'b-mod-desc':'Balance entre apreciación de capital y control del riesgo. Horizonte de largo plazo.',
+    'b-mod-t1':'Máx. Sharpe','b-mod-t2':'Diversificado','b-mod-t3':'Multiactivo',
+    'b-agr-badge':'Agresivo','b-agr-name':'Maximización de Retorno',
+    'b-agr-desc':'Tolera alta volatilidad en búsqueda de retornos superiores al mercado.',
+    'b-agr-t1':'Alto Crecimiento','b-agr-t3':'Tecnología',
+    'b-continue':'Continuar',
+    'b-s2-title':'Parámetros del Portafolio',
+    'b-s2-sub':'Define el capital, el horizonte de datos y la mezcla geográfica deseada.',
+    'b-capital':'Capital a invertir (USD)','b-lookback':'Historial para el modelo',
+    'b-yr1':'1 año','b-yr2':'2 años','b-yr3':'3 años','b-yr5':'5 años',
+    'b-ipc-lbl':'Exposición IPC México','b-ipc-min':'0% — Solo S&P 500','b-ipc-max':'60% — Alta exposición IPC',
+    'b-back':'Atras','b-optimize':'Optimizar Portafolio',
+    'b-loading-h':'Calculando portafolio óptimo...',
+    'b-ls1':'Descargando datos históricos','b-ls2':'Calculando retornos y matriz de covarianza',
+    'b-ls3':'Ejecutando optimización Markowitz','b-ls4':'Construyendo frontera eficiente',
+    'b-ls5':'Generando tesis de inversión',
+    /* ── Custom ── */
+    'c-eyebrow':'Solver Markowitz · Selección Libre','c-h2':'Crea tu propio portafolio',
+    'c-p':'Elige las acciones que quieras del S&P 500 o del IPC México. El motor Solver — igual al que usa Excel en problemas de optimización — calculará las proporciones óptimas usando la matriz de covarianza de Markowitz.',
+    'c-assets-title':'Selección de Activos',
+    'c-assets-sub':'Busca en el catálogo o escribe <strong>cualquier ticker</strong> de Yahoo Finance — acciones, ETFs, ADRs, fondos. Mínimo 2, máximo 15.',
+    'c-sel-pre':'Activos seleccionados:',
+    'c-sel-note':'Acciones del catálogo, ETFs y cualquier ticker válido de Yahoo Finance. Para IPC agrega <strong>.MX</strong> (ej: WALMEX.MX).',
+    'c-none-sel':'Ninguna acción seleccionada — usa el buscador de arriba.',
+    'c-solver-title':'Parámetros del Solver','c-obj-lbl':'Objetivo de optimización',
+    'c-obj1-title':'Maximizar Sharpe Ratio','c-obj1-sub':'Mejor retorno ajustado por riesgo (recomendado)',
+    'c-obj2-title':'Minimizar Varianza','c-obj2-sub':'Portafolio de menor riesgo posible',
+    'c-obj3-title':'Pesos Iguales','c-obj3-sub':'Distribución equitativa sin optimizar',
+    'c-wt-lbl':'Restricciones de pesos (%)','c-wt-min':'Peso mínimo por acción','c-wt-max':'Peso máximo por acción',
+    'c-cap-lbl':'Capital y horizonte',
+    'c-clear':'Limpiar selección','c-calc':'Calcular con Solver',
+    'c-loading-h':'Ejecutando Solver de Markowitz...',
+    'c-lc1':'Descargando precios históricos de las acciones seleccionadas',
+    'c-lc2':'Construyendo matriz de covarianza (Σ) y vector de retornos (μ)',
+    'c-lc3':'Ejecutando optimización SLSQP — minimizando función objetivo',
+    'c-lc4':'Calculando frontera eficiente (40 puntos)',
+    'c-lc5':'Computando contribución marginal al riesgo y matrices',
+    /* ── Analyzer ── */
+    'a-eyebrow':'Análisis Fundamental + Técnico','a-h2':'Análisis de Acciones',
+    'a-p':'Ingresa cualquier ticker del <strong>S&P 500</strong> o del <strong>IPC México</strong> (añade .MX) para obtener un análisis de valuación, señal de inversión y recomendación fundamentada.',
+    'a-btn':'Analizar',
+    'a-hint':'Separa múltiples tickers con comas. Para acciones mexicanas del IPC agrega el sufijo <strong>.MX</strong> (ej: WALMEX.MX). Máximo 8 por consulta.',
+    'a-loading':'Consultando datos fundamentales...',
+    /* ── About ── */
+    'ab-eyebrow':'Sobre Northbound','ab-h2':'Inversión guiada por evidencia, no por intuición',
+    'ab-p':'Northbound Capital acerca la optimización cuantitativa de portafolios —tradicionalmente reservada a inversionistas institucionales— a cualquier persona, de forma completamente gratuita.',
+    'ab-phil-lbl':'Investment Philosophy',
+    'ab-phil-quote':'Las decisiones de inversión deben fundamentarse en datos, diversificación y una evaluación objetiva del riesgo, no en emociones o especulación de corto plazo.',
+    'ab-why-lbl':'¿Por qué Northbound Capital?',
+    'ab-why-text':'Northbound Capital nació con el objetivo de acercar herramientas de optimización cuantitativa tradicionalmente reservadas para inversionistas institucionales a cualquier persona interesada en construir mejores portafolios. <strong>La plataforma es completamente gratuita</strong> y fue creada con el afán de ayudar a las personas a tomar mejores decisiones de inversión mediante análisis objetivos y herramientas basadas en datos.',
+    'ab-meth-lbl':'Metodología',
+    'ab-meth-intro':'Cada portafolio se construye con el mismo aparato cuantitativo que utilizan los gestores institucionales. Estas son las técnicas que operan detrás de cada resultado y lo que cada una aporta:',
+    'ab-m1':'Resuelve la combinación de activos que ofrece el mayor retorno esperado para un nivel de riesgo dado, minimizando la varianza del portafolio.',
+    'ab-m2':'Traza el conjunto de portafolios óptimos y ubica visualmente dónde se sitúa tu asignación frente al mejor equilibrio riesgo-retorno posible.',
+    'ab-m3':'Maximiza el retorno obtenido por cada unidad de riesgo total asumido, el estándar para medir la eficiencia de una cartera.',
+    'ab-m4':'Evalúa el retorno penalizando únicamente la volatilidad negativa, relevante para inversionistas con aversión a las pérdidas.',
+    'ab-m5':'Relaciona el retorno anualizado con la peor caída histórica (máximo drawdown), midiendo la resiliencia ante escenarios adversos.',
+    'ab-m6':'Simula el desempeño del portafolio con datos reales de mercado y lo compara contra su benchmark a lo largo del tiempo.',
+    'ab-m7':'Estima el rendimiento neto después de impuestos sobre ganancias de capital, acercando las cifras al retorno que realmente recibes.',
+    'ab-m8':'Integra todas las métricas anteriores para encontrar el balance que mejor se ajusta a tu perfil y horizonte de inversión.',
+    /* ── Contact ── */
+    'ct-eyebrow':'Contacto','ct-h2':'Construyamos algo que valga la pena',
+    'ct-p':'El perfil profesional detrás de Northbound Capital. Conectemos por LinkedIn o correo para colaboraciones, dudas sobre la metodología o proyectos.',
+    'ct-founder':'Fundador','ct-academic':'Estudiante de Finanzas · Tecnológico de Monterrey',
+    'ct-email-lbl':'Correo','ct-loc-lbl':'Ubicación','ct-loc':'Ciudad de México, México',
+    'ct-btn-email':'Enviar correo','ct-btn-li':'Ver LinkedIn',
+    'ct-availability':'Disponible para colaboraciones académicas, proyectos fintech y análisis de portafolios.'
   },
   en:{
+    /* ── Nav & side menu ── */
     'nav-intro':'Home','nav-builder':'Profile Builder','nav-custom':'Build Portfolio',
     'nav-analyzer':'Stock Analysis','nav-about':'About','nav-contact':'Contact',
+    'sm-title':'Options','sm-close':'Close ✕',
+    'sm-appear':'Appearance','sm-dark':'Dark mode','sm-dark-sub':'Switch color theme',
+    'sm-lang':'Select language','sm-lang-sub':'Change the platform language',
+    'sm-share':'Share','sm-copy':'Copy page link','sm-copied':'Copied!',
+    'sm-shortcuts':'Quick links',
+    'sm-disclaimer':'Market data provided by Yahoo Finance. This platform is for educational and informational purposes only — it does not constitute financial advice or an investment offer.',
+    /* ── Intro ── */
     'ih1':'Invest with precision,<br/><em>not with intuition</em>',
     'isub':'Northbound Capital analyzes the market with mathematical models to tell you exactly what to invest in and at what proportion, tailored to your risk level. No prior experience needed.',
     'ibtn':'Start analysis',
@@ -2798,13 +2910,99 @@ const _i18n = {
     'itr3-h':'Diversification','itr3-m':'Distributing your capital across different companies and sectors so that one\'s poor performance doesn\'t affect the whole.','itr3-d':'If you put all your money in one company and it performs badly, you lose everything. If you spread it across 15 companies in different sectors, the negative impact of one is offset by the others. That\'s the essence of diversification.',
     'iqs-h':'How do you want to start?','iqs-sub':'Select the option that best describes your situation',
     'iqs1-tag':'Recommended for beginners','iqs1-title':'I don\'t know where to start','iqs1-desc':'Answer three questions and the system builds your optimal portfolio automatically, choosing from over 200 companies.','iqs1-link':'Go to Profile Builder →',
-    'iqs2-tag':'For those who\'ve already researched','iqs2-title':'I already have companies in mind','iqs2-desc':'You select the companies you want to include and we calculate the exact capital allocation for each to maximize returns with minimal risk.','iqs2-link':'Go to Build Portfolio →',
-    'iqs3-tag':'For the curious','iqs3-title':'I want to analyze a company','iqs3-desc':'Enter the name of any publicly traded company and get a complete analysis: fair valuation, recent trend, and an investment signal.','iqs3-link':'Go to Stock Analysis →',
+    'iqs2-tag':'For those who\'ve already researched','iqs2-title':'I already have companies in mind','iqs2-desc':'You select the companies you want to include and we calculate the exact capital allocation to maximize returns with minimal risk.','iqs2-link':'Go to Build Portfolio →',
+    'iqs3-tag':'For the curious','iqs3-title':'I want to analyze a company','iqs3-desc':'Enter any publicly traded company and get a complete analysis: fair valuation, recent trend, and an investment signal.','iqs3-link':'Go to Stock Analysis →',
     'ihow-h':'How does the process work?',
     'ihow1-h':'Define how much risk you can take on','ihow1-p':'Indicate whether you prefer to protect your capital above all (conservative), seek a balance between safety and growth (moderate), or maximize returns by accepting more variability (aggressive).',
     'ihow2-h':'The engine analyzes over 200 companies','ihow2-p':'It processes five years of real market data — S&P 500 stocks from the U.S. and Mexico\'s IPC — and mathematically calculates the combination that offers the highest return per unit of risk.',
     'ihow3-h':'You receive clear, precise instructions','ihow3-p':'You\'ll know exactly which companies to buy and what percentage to allocate to each. You can view historical projections, market comparisons, and export the results in PDF or Excel.',
-    'icta-h':'Start investing with a solid foundation','icta-btn1':'Build my portfolio','icta-btn2':'Analyze a company'
+    'icta-h':'Start investing with a solid foundation','icta-btn1':'Build my portfolio','icta-btn2':'Analyze a company',
+    /* ── Builder ── */
+    'bh1':'Portfolio<br/><em>Optimization</em>',
+    'bsub':'Tell us how much risk you\'re willing to take and we\'ll tell you exactly which companies to invest in and what percentage of your money to put in each, using five years of real market data.',
+    'b-insight':'A diversified portfolio doesn\'t eliminate risk — it improves its efficiency.',
+    'b-unit1':'stocks','b-stat1':'Analysis universe',
+    'b-unit2':'years','b-stat2':'Market history','b-stat3':'U.S. & Mexico',
+    'b-sp1':'Profile','b-sp2':'Parameters','b-sp3':'Results',
+    'b-vol':'Volatility','b-dd':'Max DD','b-beta':'Beta S&P','b-sparkline':'Simulated cumulative return',
+    'b-reset':'← New Analysis',
+    'b-ctx-lbl':'Setting strategy','b-ctx-title':'Profile',
+    'b-s1-title':'Investor Profile',
+    'b-s1-sub':'How much risk are you willing to take? Choose the profile that reflects your time horizon and tolerance, or take the quiz if you\'re unsure.',
+    'b-quiz-q':'Not sure what profile fits you?',
+    'b-quiz-sub':'Answer 5 questions and discover your risk profile in 2 minutes',
+    'b-quiz-btn':'Take the quiz',
+    'b-con-badge':'Conservative','b-con-name':'Capital Preservation',
+    'b-con-desc':'Prioritizes stability and dividend income. Short to medium-term horizon.',
+    'b-con-t1':'Min Variance','b-con-t3':'Dividends',
+    'b-mod-badge':'Moderate','b-mod-name':'Balanced Growth',
+    'b-mod-desc':'Balance between capital appreciation and risk control. Long-term horizon.',
+    'b-mod-t1':'Max Sharpe','b-mod-t2':'Diversified','b-mod-t3':'Multi-asset',
+    'b-agr-badge':'Aggressive','b-agr-name':'Return Maximization',
+    'b-agr-desc':'Tolerates high volatility in pursuit of above-market returns.',
+    'b-agr-t1':'High Growth','b-agr-t3':'Technology',
+    'b-continue':'Continue',
+    'b-s2-title':'Portfolio Parameters',
+    'b-s2-sub':'Define the capital, data horizon, and desired geographic mix.',
+    'b-capital':'Capital to invest (USD)','b-lookback':'Data history for model',
+    'b-yr1':'1 year','b-yr2':'2 years','b-yr3':'3 years','b-yr5':'5 years',
+    'b-ipc-lbl':'Mexico IPC Exposure','b-ipc-min':'0% — S&P 500 only','b-ipc-max':'60% — High IPC exposure',
+    'b-back':'Back','b-optimize':'Optimize Portfolio',
+    'b-loading-h':'Calculating optimal portfolio...',
+    'b-ls1':'Downloading historical data','b-ls2':'Computing returns and covariance matrix',
+    'b-ls3':'Running Markowitz optimization','b-ls4':'Building efficient frontier',
+    'b-ls5':'Generating investment thesis',
+    /* ── Custom ── */
+    'c-eyebrow':'Markowitz Solver · Free Selection','c-h2':'Build your own portfolio',
+    'c-p':'Choose any stocks from the S&P 500 or Mexico\'s IPC. The Solver engine — the same optimization method used in Excel — will calculate the optimal weights using Markowitz\'s covariance matrix.',
+    'c-assets-title':'Asset Selection',
+    'c-assets-sub':'Search the catalog or type <strong>any ticker</strong> from Yahoo Finance — stocks, ETFs, ADRs, funds. Minimum 2, maximum 15.',
+    'c-sel-pre':'Selected assets:',
+    'c-sel-note':'Catalog stocks, ETFs, and any valid Yahoo Finance ticker. For IPC add <strong>.MX</strong> (e.g. WALMEX.MX).',
+    'c-none-sel':'No stocks selected — use the search bar above.',
+    'c-solver-title':'Solver Parameters','c-obj-lbl':'Optimization objective',
+    'c-obj1-title':'Maximize Sharpe Ratio','c-obj1-sub':'Best risk-adjusted return (recommended)',
+    'c-obj2-title':'Minimize Variance','c-obj2-sub':'Lowest possible risk portfolio',
+    'c-obj3-title':'Equal Weights','c-obj3-sub':'Equal distribution without optimization',
+    'c-wt-lbl':'Weight constraints (%)','c-wt-min':'Minimum weight per stock','c-wt-max':'Maximum weight per stock',
+    'c-cap-lbl':'Capital & horizon',
+    'c-clear':'Clear selection','c-calc':'Calculate with Solver',
+    'c-loading-h':'Running Markowitz Solver...',
+    'c-lc1':'Downloading historical prices for selected stocks',
+    'c-lc2':'Building covariance matrix (Σ) and return vector (μ)',
+    'c-lc3':'Running SLSQP optimization — minimizing objective function',
+    'c-lc4':'Calculating efficient frontier (40 points)',
+    'c-lc5':'Computing marginal risk contribution and matrices',
+    /* ── Analyzer ── */
+    'a-eyebrow':'Fundamental + Technical Analysis','a-h2':'Stock Analysis',
+    'a-p':'Enter any ticker from the <strong>S&P 500</strong> or <strong>Mexico\'s IPC</strong> (add .MX) to get a valuation analysis, investment signal, and data-backed recommendation.',
+    'a-btn':'Analyze',
+    'a-hint':'Separate multiple tickers with commas. For Mexican IPC stocks add the suffix <strong>.MX</strong> (e.g. WALMEX.MX). Maximum 8 per query.',
+    'a-loading':'Fetching fundamental data...',
+    /* ── About ── */
+    'ab-eyebrow':'About Northbound','ab-h2':'Evidence-driven investing, not intuition',
+    'ab-p':'Northbound Capital brings quantitative portfolio optimization — traditionally reserved for institutional investors — to anyone, completely free of charge.',
+    'ab-phil-lbl':'Investment Philosophy',
+    'ab-phil-quote':'Investment decisions must be grounded in data, diversification, and an objective assessment of risk — not in emotions or short-term speculation.',
+    'ab-why-lbl':'Why Northbound Capital?',
+    'ab-why-text':'Northbound Capital was built to bring quantitative optimization tools — traditionally reserved for institutional investors — to anyone interested in building better portfolios. <strong>The platform is completely free</strong> and was created to help people make better investment decisions through objective analysis and data-driven tools.',
+    'ab-meth-lbl':'Methodology',
+    'ab-meth-intro':'Every portfolio is built with the same quantitative framework used by institutional fund managers. These are the techniques behind each result and what each one contributes:',
+    'ab-m1':'Finds the asset combination that offers the highest expected return for a given level of risk, minimizing portfolio variance.',
+    'ab-m2':'Maps the set of optimal portfolios and visually shows where your allocation sits relative to the best possible risk-return trade-off.',
+    'ab-m3':'Maximizes the return obtained per unit of total risk taken — the standard measure of portfolio efficiency.',
+    'ab-m4':'Evaluates return by penalizing only downside volatility, relevant for investors with loss aversion.',
+    'ab-m5':'Relates annualized return to the worst historical drawdown, measuring resilience against adverse scenarios.',
+    'ab-m6':'Simulates portfolio performance with real market data and compares it against its benchmark over time.',
+    'ab-m7':'Estimates net return after capital gains taxes, bringing figures closer to what you\'ll actually receive.',
+    'ab-m8':'Integrates all the above metrics to find the balance that best fits your profile and investment horizon.',
+    /* ── Contact ── */
+    'ct-eyebrow':'Contact','ct-h2':'Let\'s build something worth it',
+    'ct-p':'The professional behind Northbound Capital. Reach out on LinkedIn or by email for collaborations, methodology questions, or projects.',
+    'ct-founder':'Founder','ct-academic':'Finance Student · Tecnológico de Monterrey',
+    'ct-email-lbl':'Email','ct-loc-lbl':'Location','ct-loc':'Mexico City, Mexico',
+    'ct-btn-email':'Send email','ct-btn-li':'View LinkedIn',
+    'ct-availability':'Available for academic collaborations, fintech projects, and portfolio analysis.'
   }
 };
 let _currentLang = localStorage.getItem('ac_lang') || 'es';
