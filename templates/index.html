@@ -1009,10 +1009,9 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
 .intro-concept p{font-size:.855rem;color:var(--dim);line-height:1.75}
 
 .intro-terms{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:0 0 52px}
-.intro-term{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 16px;text-align:center;box-shadow:var(--shadow-card)}
-.it-icon{font-size:1.8rem;margin-bottom:10px}
-.intro-term h4{font-size:.82rem;font-weight:700;margin-bottom:6px;color:var(--text)}
-.intro-term p{font-size:.77rem;color:var(--muted);line-height:1.6}
+.intro-term{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--blue-600);border-radius:var(--radius);padding:22px 20px;text-align:left;box-shadow:var(--shadow-card)}
+.intro-term h4{font-size:.85rem;font-weight:700;margin-bottom:8px;color:var(--text)}
+.intro-term p{font-size:.79rem;color:var(--muted);line-height:1.68}
 
 .intro-section-title{text-align:center;margin-bottom:28px}
 .intro-section-title h2{font-size:clamp(1.25rem,3vw,1.75rem);font-weight:800;letter-spacing:-.025em;margin-bottom:8px}
@@ -1021,7 +1020,7 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
 .intro-tool-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:60px}
 .intro-tool-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:26px 22px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow-card);transition:box-shadow .2s,border-color .2s,transform .2s}
 .intro-tool-card:hover{box-shadow:var(--shadow-lg);border-color:var(--accent-l);transform:translateY(-3px)}
-.itc-icon{font-size:1.9rem;line-height:1;margin-bottom:4px}
+.itc-label{font-size:.7rem;font-weight:700;letter-spacing:.1em;color:var(--blue-600);background:var(--blue-50);border:1px solid var(--blue-100);padding:3px 10px;border-radius:99px;width:fit-content;margin-bottom:4px}
 .intro-tool-card h3{font-size:.93rem;font-weight:700;color:var(--text)}
 .intro-tool-card p{font-size:.81rem;color:var(--muted);line-height:1.65;flex:1}
 
@@ -1080,86 +1079,83 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
 
   <!-- Hero -->
   <div class="intro-hero">
-    <div class="eyebrow">Para todos · Sin experiencia requerida</div>
-    <h1>Haz que tu dinero<br/><em>trabaje más inteligente</em></h1>
-    <p class="hero-sub">Esta herramienta gratuita usa matemáticas financieras para armar el portafolio de inversión ideal según tu perfil — sin que necesites saber nada de finanzas.</p>
-    <button onclick="switchPage('builder')" class="btn btn-primary" style="padding:14px 32px;font-size:.95rem;font-weight:700">Quiero optimizar mi portafolio →</button>
+    <div class="eyebrow">Plataforma de análisis financiero · Acceso gratuito</div>
+    <h1>Invierte con criterio,<br/><em>no con intuición</em></h1>
+    <p class="hero-sub">Northbound Capital analiza el mercado con modelos matemáticos para decirte exactamente en qué invertir y en qué proporción, adaptado a tu nivel de riesgo. Sin experiencia previa necesaria.</p>
+    <button onclick="switchPage('builder')" class="btn btn-primary" style="padding:14px 32px;font-size:.95rem;font-weight:700">Comenzar análisis</button>
   </div>
 
-  <!-- ¿Qué es un portafolio? -->
+  <!-- ¿Qué es una acción y un portafolio? -->
   <div class="intro-concept">
-    <h2>💡 ¿Qué es un portafolio de inversión?</h2>
-    <p>Es simplemente el conjunto de acciones en las que decides poner tu dinero. La clave está en <strong>cómo los combinas</strong>: si eliges bien, puedes ganar más sin asumir más riesgo. Northbound Capital hace ese cálculo por ti de forma automática.</p>
+    <h2>¿No sabes nada de inversiones? Empieza aquí.</h2>
+    <p>Una <strong>acción</strong> es una pequeña parte de una empresa. Cuando la compras, te conviertes en dueño proporcional de esa compañía y participas en sus ganancias. Un <strong>portafolio de inversión</strong> es el conjunto de empresas en las que decides distribuir tu capital. La clave no está en elegir una sola empresa ganadora, sino en combinarlas correctamente para obtener el mayor rendimiento posible con el menor riesgo. Eso es exactamente lo que esta herramienta calcula por ti.</p>
   </div>
 
   <!-- 3 conceptos clave -->
   <div class="intro-terms">
     <div class="intro-term">
-      <div class="it-icon">📈</div>
       <h4>Rendimiento</h4>
-      <p>Cuánto gana tu dinero con el tiempo. Esta herramienta lo maximiza.</p>
+      <p>La ganancia que genera tu inversión con el tiempo, expresada como porcentaje anual. Esta plataforma busca maximizarlo dentro de los límites de tu perfil.</p>
     </div>
     <div class="intro-term">
-      <div class="it-icon">⚖️</div>
       <h4>Riesgo</h4>
-      <p>Qué tanto puede bajar tu inversión. Lo mantenemos bajo control según tu perfil.</p>
+      <p>La posibilidad de que tu inversión baje de valor en ciertos períodos. No es algo que se elimina, pero sí se controla. Aquí lo ajustamos según cuánta variación estás dispuesto a tolerar.</p>
     </div>
     <div class="intro-term">
-      <div class="it-icon">🌐</div>
       <h4>Diversificación</h4>
-      <p>No poner todos los huevos en una canasta. La base de cualquier buena inversión.</p>
+      <p>Distribuir tu capital entre distintas empresas y sectores para que el mal desempeño de una no afecte al conjunto. Es el principio más importante de cualquier estrategia de inversión.</p>
     </div>
   </div>
 
   <!-- 3 herramientas -->
   <div class="intro-section-title">
-    <h2>¿Qué puedes hacer aquí?</h2>
-    <p>Tres herramientas para inversionistas de cualquier nivel</p>
+    <h2>¿Qué puedes hacer en esta plataforma?</h2>
+    <p>Tres herramientas para tomar decisiones de inversión con fundamento</p>
   </div>
   <div class="intro-tool-grid">
     <div class="intro-tool-card">
-      <div class="itc-icon">🎯</div>
+      <div class="itc-label">01</div>
       <h3>Constructor por Perfil</h3>
-      <p>Responde unas preguntas sobre tu tolerancia al riesgo y te armamos el portafolio óptimo automáticamente desde 200+ acciones. Ideal para empezar desde cero.</p>
-      <button onclick="switchPage('builder')" class="btn btn-ghost btn-sm" style="margin-top:8px">Ir al constructor →</button>
+      <p>Responde tres preguntas sobre tu situación financiera y horizonte de inversión. El sistema selecciona y combina automáticamente las mejores empresas del mercado para tu perfil de riesgo.</p>
+      <button onclick="switchPage('builder')" class="btn btn-ghost btn-sm" style="margin-top:8px">Ir al constructor</button>
     </div>
     <div class="intro-tool-card">
-      <div class="itc-icon">⚙️</div>
+      <div class="itc-label">02</div>
       <h3>Crea tu Portafolio</h3>
-      <p>¿Ya sabes qué acciones quieres incluir? Agrégalas tú mismo y el sistema calcula cuánto poner en cada una para maximizar tu relación riesgo-retorno.</p>
-      <button onclick="switchPage('custom')" class="btn btn-ghost btn-sm" style="margin-top:8px">Personalizar mi portafolio →</button>
+      <p>Si ya tienes empresas en mente, tú las seleccionas y la plataforma calcula la proporción exacta de capital a destinar a cada una para maximizar el rendimiento con el menor riesgo posible.</p>
+      <button onclick="switchPage('custom')" class="btn btn-ghost btn-sm" style="margin-top:8px">Armar portafolio propio</button>
     </div>
     <div class="intro-tool-card">
-      <div class="itc-icon">📊</div>
-      <h3>Análisis de Acciones</h3>
-      <p>Busca cualquier acción y obtén métricas clave: si está cara o barata según sus fundamentos, su tendencia reciente, señales de compra o venta y más.</p>
-      <button onclick="switchPage('analyzer')" class="btn btn-ghost btn-sm" style="margin-top:8px">Analizar una acción →</button>
+      <div class="itc-label">03</div>
+      <h3>Análisis de Empresas</h3>
+      <p>Ingresa el nombre o símbolo bursátil de cualquier empresa y obtén un análisis completo: si su precio actual es justo o elevado, su tendencia reciente y una señal de inversión basada en datos.</p>
+      <button onclick="switchPage('analyzer')" class="btn btn-ghost btn-sm" style="margin-top:8px">Analizar una empresa</button>
     </div>
   </div>
 
   <!-- Cómo funciona -->
   <div class="intro-how">
-    <h2>¿Cómo funciona?</h2>
+    <h2>¿Cómo funciona el proceso?</h2>
     <div class="intro-steps">
       <div class="intro-step">
         <div class="is-num">1</div>
         <div class="intro-step-text">
-          <h4>Elige tu perfil de riesgo</h4>
-          <p>Conservador, moderado o agresivo — según cuánto puedes permitirte perder temporalmente y en cuánto tiempo necesitas el dinero.</p>
+          <h4>Define cuánto riesgo puedes asumir</h4>
+          <p>Indica si prefieres proteger tu capital ante todo (perfil conservador), buscar un equilibrio entre seguridad y crecimiento (moderado), o maximizar el rendimiento aceptando mayor variabilidad (agresivo).</p>
         </div>
       </div>
       <div class="intro-step">
         <div class="is-num">2</div>
         <div class="intro-step-text">
-          <h4>El sistema analiza 200+ acciones</h4>
-          <p>Usa 5 años de datos reales del mercado (S&amp;P 500 + IPC de México) para calcular qué combinación de acciones da el mejor rendimiento por cada unidad de riesgo que asumes.</p>
+          <h4>El motor analiza más de 200 empresas</h4>
+          <p>Procesa cinco años de datos reales del mercado — acciones del S&amp;P 500 de Estados Unidos y del IPC de México — y calcula, mediante optimización matemática, la combinación que ofrece el mejor rendimiento por unidad de riesgo.</p>
         </div>
       </div>
       <div class="intro-step">
         <div class="is-num">3</div>
         <div class="intro-step-text">
-          <h4>Recibes tu portafolio óptimo</h4>
-          <p>Con el porcentaje exacto a invertir en cada acción. Puedes ver proyecciones, backtesting histórico, comparativas y exportar todo en PDF o Excel.</p>
+          <h4>Recibes instrucciones claras y precisas</h4>
+          <p>Sabrás exactamente qué empresas comprar y qué porcentaje de tu capital destinar a cada una. Puedes ver proyecciones históricas, comparativas con el mercado y exportar el resultado completo en PDF o Excel.</p>
         </div>
       </div>
     </div>
@@ -1167,11 +1163,11 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
 
   <!-- CTA final -->
   <div class="intro-cta">
-    <h2>¿Listo para invertir mejor?</h2>
-    <p>Es gratis. Sin registro. Sin tarjeta. Solo entra y empieza.</p>
+    <h2>Empieza a invertir con fundamento</h2>
+    <p>Plataforma gratuita. Sin registro. Sin tarjeta de crédito.</p>
     <div class="intro-cta-btns">
       <button onclick="switchPage('builder')" class="btn btn-primary" style="padding:12px 28px;font-size:.9rem;font-weight:700">Construir mi portafolio</button>
-      <button onclick="switchPage('analyzer')" class="btn btn-ghost" style="padding:12px 24px;font-size:.9rem">Analizar una acción</button>
+      <button onclick="switchPage('analyzer')" class="btn btn-ghost" style="padding:12px 24px;font-size:.9rem">Analizar una empresa</button>
     </div>
   </div>
 
