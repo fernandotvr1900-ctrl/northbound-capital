@@ -1125,6 +1125,21 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
 .reveal.visible{opacity:1;transform:none}
 .reveal-d1{transition-delay:.07s}.reveal-d2{transition-delay:.14s}.reveal-d3{transition-delay:.21s}
 @media(max-width:720px){.intro-qs-grid{grid-template-columns:1fr}}
+/* Intro móvil */
+.intro-hero-btn{padding:13px 30px;font-size:.93rem;font-weight:700}
+@media(max-width:640px){
+  .intro-hero-btn{width:100%;justify-content:center}
+  .intro-concept{position:static}
+  .intro-cta-btns{flex-direction:column;align-items:stretch;gap:10px}
+  .intro-cta-btns .btn{width:100%;justify-content:center;text-align:center}
+  .intro-cta{padding:28px 16px}
+  .qs-card{padding:20px 16px}
+  .intro-step{padding:20px 16px}
+}
+@media(max-width:400px){
+  .intro-hero-grid{padding:24px 0 16px}
+  .is-num{width:36px;height:36px;font-size:.85rem}
+}
 </style>
 </head>
 <body>
@@ -1217,94 +1232,90 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
 
   <!-- Hero 2 columnas -->
   <div class="intro-hero-grid">
-    <!-- Columna izquierda: copy + CTA -->
     <div class="intro-left">
-      <div class="eyebrow">Construcción y análisis de portafolios de inversión</div>
-      <h1>Invierte con criterio,<br/><em>no con intuición</em></h1>
-      <p class="hero-sub">Northbound Capital analiza el mercado con modelos matemáticos para decirte exactamente en qué invertir y en qué proporción, adaptado a tu nivel de riesgo. Sin experiencia previa necesaria.</p>
-      <button onclick="switchPage('builder')" class="btn btn-primary" style="padding:13px 30px;font-size:.93rem;font-weight:700">Comenzar análisis</button>
+      <h1 data-i18n="ih1">Invierte con criterio,<br/><em>no con intuición</em></h1>
+      <p class="hero-sub" data-i18n="isub">Northbound Capital analiza el mercado con modelos matemáticos para decirte exactamente en qué invertir y en qué proporción, adaptado a tu nivel de riesgo. Sin experiencia previa necesaria.</p>
+      <button onclick="switchPage('builder')" class="btn btn-primary intro-hero-btn" data-i18n="ibtn">Comenzar análisis</button>
     </div>
-    <!-- Columna derecha: qué es una acción / portafolio -->
     <div class="intro-concept">
-      <h2>¿Es tu primer acercamiento a las inversiones? Comienza aquí.</h2>
-      <p>Una <strong>acción</strong> es una pequeña parte de una empresa. Cuando la compras, te conviertes en dueño proporcional de esa compañía y participas en sus ganancias.<br/><br/>Un <strong>portafolio de inversión</strong> es el conjunto de empresas en las que decides distribuir tu capital. La clave no está en elegir una sola empresa ganadora, sino en combinarlas correctamente para obtener el mayor rendimiento posible con el menor riesgo. Eso es exactamente lo que esta herramienta calcula por ti.</p>
+      <h2 data-i18n="ic-h">¿Es tu primer acercamiento a las inversiones? Comienza aquí.</h2>
+      <p data-i18n="ic-p">Una <strong>acción</strong> es una pequeña parte de una empresa. Cuando la compras, te conviertes en dueño proporcional de esa compañía y participas en sus ganancias.<br/><br/>Un <strong>portafolio de inversión</strong> es el conjunto de empresas en las que decides distribuir tu capital. La clave no está en elegir una sola empresa ganadora, sino en combinarlas correctamente para obtener el mayor rendimiento posible con el menor riesgo. Eso es exactamente lo que esta herramienta calcula por ti.</p>
     </div>
   </div>
 
-  <!-- 3 conceptos clave — expandibles al hacer clic -->
+  <!-- 3 conceptos clave — expandibles -->
   <div class="intro-terms reveal">
     <div class="intro-term reveal-d1" onclick="toggleTerm(this)" tabindex="0" role="button" aria-expanded="false">
-      <div class="term-head"><h4>Rendimiento</h4><span class="term-chevron">+</span></div>
-      <p class="term-main">La ganancia que genera tu inversión con el tiempo, expresada como porcentaje anual.</p>
-      <p class="term-detail">Por ejemplo: si inviertes $10,000 y al cabo de un año valen $11,500, tu rendimiento fue del 15% anual. Esta plataforma busca maximizarlo sin que tengas que asumir más riesgo del que estás dispuesto a tolerar.</p>
+      <div class="term-head"><h4 data-i18n="itr1-h">Rendimiento</h4><span class="term-chevron">+</span></div>
+      <p class="term-main" data-i18n="itr1-m">La ganancia que genera tu inversión con el tiempo, expresada como porcentaje anual.</p>
+      <p class="term-detail" data-i18n="itr1-d">Por ejemplo: si inviertes $10,000 y al cabo de un año valen $11,500, tu rendimiento fue del 15% anual. Esta plataforma busca maximizarlo sin que tengas que asumir más riesgo del que estás dispuesto a tolerar.</p>
     </div>
     <div class="intro-term reveal-d2" onclick="toggleTerm(this)" tabindex="0" role="button" aria-expanded="false">
-      <div class="term-head"><h4>Riesgo</h4><span class="term-chevron">+</span></div>
-      <p class="term-main">La posibilidad de que tu inversión baje de valor en ciertos períodos. No se elimina, pero sí se controla.</p>
-      <p class="term-detail">Todas las inversiones tienen riesgo. La diferencia está en cuánto estás dispuesto a asumir. Si no te gusta ver tu dinero fluctuar, elige un perfil conservador. Si puedes tolerar variaciones a cambio de mayor crecimiento, un perfil agresivo puede ser mejor para ti.</p>
+      <div class="term-head"><h4 data-i18n="itr2-h">Riesgo</h4><span class="term-chevron">+</span></div>
+      <p class="term-main" data-i18n="itr2-m">La posibilidad de que tu inversión baje de valor en ciertos períodos. No se elimina, pero sí se controla.</p>
+      <p class="term-detail" data-i18n="itr2-d">Todas las inversiones tienen riesgo. La diferencia está en cuánto estás dispuesto a asumir. Si no te gusta ver tu dinero fluctuar, elige un perfil conservador. Si puedes tolerar variaciones a cambio de mayor crecimiento, un perfil agresivo puede ser mejor para ti.</p>
     </div>
     <div class="intro-term reveal-d3" onclick="toggleTerm(this)" tabindex="0" role="button" aria-expanded="false">
-      <div class="term-head"><h4>Diversificación</h4><span class="term-chevron">+</span></div>
-      <p class="term-main">Distribuir tu capital entre distintas empresas y sectores para que el mal desempeño de una no afecte al conjunto.</p>
-      <p class="term-detail">Si pones todo tu dinero en una sola empresa y le va mal, pierdes todo. Si lo distribuyes entre 15 empresas de distintos sectores, el impacto negativo de una queda compensado por las demás. Esa es la esencia de la diversificación.</p>
+      <div class="term-head"><h4 data-i18n="itr3-h">Diversificación</h4><span class="term-chevron">+</span></div>
+      <p class="term-main" data-i18n="itr3-m">Distribuir tu capital entre distintas empresas y sectores para que el mal desempeño de una no afecte al conjunto.</p>
+      <p class="term-detail" data-i18n="itr3-d">Si pones todo tu dinero en una sola empresa y le va mal, pierdes todo. Si lo distribuyes entre 15 empresas de distintos sectores, el impacto negativo de una queda compensado por las demás. Esa es la esencia de la diversificación.</p>
     </div>
   </div>
 
-  <!-- Selector interactivo de punto de entrada -->
+  <!-- Selector interactivo -->
   <div class="intro-section-title reveal">
-    <h2>¿Cómo quieres comenzar?</h2>
-    <p>Selecciona la opción que mejor describe tu situación</p>
+    <h2 data-i18n="iqs-h">¿Cómo quieres comenzar?</h2>
+    <p data-i18n="iqs-sub">Selecciona la opción que mejor describe tu situación</p>
   </div>
   <div class="intro-qs-grid">
     <div class="qs-card qsc-1 reveal reveal-d1" onclick="switchPage('builder')" tabindex="0" role="button" onkeydown="if(event.key==='Enter')switchPage('builder')">
-      <div class="qs-tag">Recomendado para principiantes</div>
-      <div class="qs-title">No sé por dónde empezar</div>
-      <p class="qs-desc">Responde tres preguntas y el sistema construye tu portafolio óptimo de forma completamente automática, eligiendo entre más de 200 empresas.</p>
-      <div class="qs-link">Ir al Constructor por Perfil →</div>
+      <div class="qs-tag" data-i18n="iqs1-tag">Recomendado para principiantes</div>
+      <div class="qs-title" data-i18n="iqs1-title">No sé por dónde empezar</div>
+      <p class="qs-desc" data-i18n="iqs1-desc">Responde tres preguntas y el sistema construye tu portafolio óptimo de forma completamente automática, eligiendo entre más de 200 empresas.</p>
+      <div class="qs-link" data-i18n="iqs1-link">Ir al Constructor por Perfil →</div>
     </div>
     <div class="qs-card qsc-2 reveal reveal-d2" onclick="switchPage('custom')" tabindex="0" role="button" onkeydown="if(event.key==='Enter')switchPage('custom')">
-      <div class="qs-tag">Para quien ya investigó</div>
-      <div class="qs-title">Ya tengo empresas en mente</div>
-      <p class="qs-desc">Tú eliges las empresas que quieres incluir y nosotros calculamos la proporción exacta de capital para maximizar tu rendimiento con el menor riesgo posible.</p>
-      <div class="qs-link">Ir a Crea tu Portafolio →</div>
+      <div class="qs-tag" data-i18n="iqs2-tag">Para quien ya investigó</div>
+      <div class="qs-title" data-i18n="iqs2-title">Ya tengo empresas en mente</div>
+      <p class="qs-desc" data-i18n="iqs2-desc">Tú eliges las empresas que quieres incluir y nosotros calculamos la proporción exacta de capital para maximizar tu rendimiento con el menor riesgo posible.</p>
+      <div class="qs-link" data-i18n="iqs2-link">Ir a Crea tu Portafolio →</div>
     </div>
     <div class="qs-card qsc-3 reveal reveal-d3" onclick="switchPage('analyzer')" tabindex="0" role="button" onkeydown="if(event.key==='Enter')switchPage('analyzer')">
-      <div class="qs-tag">Para el curioso</div>
-      <div class="qs-title">Quiero analizar una empresa</div>
-      <p class="qs-desc">Ingresa el nombre de cualquier empresa cotizada en bolsa y obtén su análisis completo: si su precio es justo, su tendencia reciente y una señal de inversión.</p>
-      <div class="qs-link">Ir al Análisis de Empresas →</div>
+      <div class="qs-tag" data-i18n="iqs3-tag">Para el curioso</div>
+      <div class="qs-title" data-i18n="iqs3-title">Quiero analizar una empresa</div>
+      <p class="qs-desc" data-i18n="iqs3-desc">Ingresa el nombre de cualquier empresa cotizada en bolsa y obtén su análisis completo: si su precio es justo, su tendencia reciente y una señal de inversión.</p>
+      <div class="qs-link" data-i18n="iqs3-link">Ir al Análisis de Empresas →</div>
     </div>
   </div>
 
   <!-- Cómo funciona -->
   <div class="intro-how reveal">
-    <h2>¿Cómo funciona el proceso?</h2>
+    <h2 data-i18n="ihow-h">¿Cómo funciona el proceso?</h2>
     <div class="intro-steps">
       <div class="intro-step">
         <div class="is-num">1</div>
-        <h4>Define cuánto riesgo puedes asumir</h4>
-        <p>Indica si prefieres proteger tu capital ante todo (conservador), buscar un equilibrio entre seguridad y crecimiento (moderado), o maximizar el rendimiento aceptando mayor variabilidad (agresivo).</p>
+        <h4 data-i18n="ihow1-h">Define cuánto riesgo puedes asumir</h4>
+        <p data-i18n="ihow1-p">Indica si prefieres proteger tu capital ante todo (conservador), buscar un equilibrio entre seguridad y crecimiento (moderado), o maximizar el rendimiento aceptando mayor variabilidad (agresivo).</p>
       </div>
       <div class="intro-step">
         <div class="is-num">2</div>
-        <h4>El motor analiza más de 200 empresas</h4>
-        <p>Procesa cinco años de datos reales del mercado — acciones del S&amp;P 500 de EE.UU. y del IPC de México — y calcula matemáticamente la combinación que ofrece el mayor rendimiento por cada unidad de riesgo.</p>
+        <h4 data-i18n="ihow2-h">El motor analiza más de 200 empresas</h4>
+        <p data-i18n="ihow2-p">Procesa cinco años de datos reales del mercado — acciones del S&amp;P 500 de EE.UU. y del IPC de México — y calcula matemáticamente la combinación que ofrece el mayor rendimiento por cada unidad de riesgo.</p>
       </div>
       <div class="intro-step">
         <div class="is-num">3</div>
-        <h4>Recibes instrucciones claras y precisas</h4>
-        <p>Sabrás exactamente qué empresas comprar y qué porcentaje destinar a cada una. Puedes ver proyecciones históricas, comparativas con el mercado y exportar el resultado en PDF o Excel.</p>
+        <h4 data-i18n="ihow3-h">Recibes instrucciones claras y precisas</h4>
+        <p data-i18n="ihow3-p">Sabrás exactamente qué empresas comprar y qué porcentaje destinar a cada una. Puedes ver proyecciones históricas, comparativas con el mercado y exportar el resultado en PDF o Excel.</p>
       </div>
     </div>
   </div>
 
   <!-- CTA final -->
   <div class="intro-cta">
-    <h2>Empieza a invertir con fundamento</h2>
-    <p>Plataforma gratuita. Sin registro. Sin tarjeta de crédito.</p>
+    <h2 data-i18n="icta-h">Empieza a invertir con fundamento</h2>
     <div class="intro-cta-btns">
-      <button onclick="switchPage('builder')" class="btn btn-primary" style="padding:12px 28px;font-size:.9rem;font-weight:700">Construir mi portafolio</button>
-      <button onclick="switchPage('analyzer')" class="btn btn-ghost" style="padding:12px 24px;font-size:.9rem">Analizar una empresa</button>
+      <button onclick="switchPage('builder')" class="btn btn-primary" data-i18n="icta-btn1">Construir mi portafolio</button>
+      <button onclick="switchPage('analyzer')" class="btn btn-ghost" data-i18n="icta-btn2">Analizar una empresa</button>
     </div>
   </div>
 
@@ -2756,12 +2767,44 @@ const _i18n = {
   es:{
     'nav-intro':'Inicio','nav-builder':'Constructor por Perfil','nav-custom':'Crea tu Portafolio',
     'nav-analyzer':'Análisis de Acciones','nav-about':'Sobre Northbound','nav-contact':'Contacto',
-    'sm-head':'Opciones'
+    'ih1':'Invierte con criterio,<br/><em>no con intuición</em>',
+    'isub':'Northbound Capital analiza el mercado con modelos matemáticos para decirte exactamente en qué invertir y en qué proporción, adaptado a tu nivel de riesgo. Sin experiencia previa necesaria.',
+    'ibtn':'Comenzar análisis',
+    'ic-h':'¿Es tu primer acercamiento a las inversiones? Comienza aquí.',
+    'ic-p':'Una <strong>acción</strong> es una pequeña parte de una empresa. Cuando la compras, te conviertes en dueño proporcional de esa compañía y participas en sus ganancias.<br/><br/>Un <strong>portafolio de inversión</strong> es el conjunto de empresas en las que decides distribuir tu capital. La clave no está en elegir una sola empresa ganadora, sino en combinarlas correctamente para obtener el mayor rendimiento posible con el menor riesgo. Eso es exactamente lo que esta herramienta calcula por ti.',
+    'itr1-h':'Rendimiento','itr1-m':'La ganancia que genera tu inversión con el tiempo, expresada como porcentaje anual.','itr1-d':'Por ejemplo: si inviertes $10,000 y al cabo de un año valen $11,500, tu rendimiento fue del 15% anual. Esta plataforma busca maximizarlo sin que tengas que asumir más riesgo del que estás dispuesto a tolerar.',
+    'itr2-h':'Riesgo','itr2-m':'La posibilidad de que tu inversión baje de valor en ciertos períodos. No se elimina, pero sí se controla.','itr2-d':'Todas las inversiones tienen riesgo. La diferencia está en cuánto estás dispuesto a asumir. Si no te gusta ver tu dinero fluctuar, elige un perfil conservador. Si puedes tolerar variaciones a cambio de mayor crecimiento, un perfil agresivo puede ser mejor para ti.',
+    'itr3-h':'Diversificación','itr3-m':'Distribuir tu capital entre distintas empresas y sectores para que el mal desempeño de una no afecte al conjunto.','itr3-d':'Si pones todo tu dinero en una sola empresa y le va mal, pierdes todo. Si lo distribuyes entre 15 empresas de distintos sectores, el impacto negativo de una queda compensado por las demás. Esa es la esencia de la diversificación.',
+    'iqs-h':'¿Cómo quieres comenzar?','iqs-sub':'Selecciona la opción que mejor describe tu situación',
+    'iqs1-tag':'Recomendado para principiantes','iqs1-title':'No sé por dónde empezar','iqs1-desc':'Responde tres preguntas y el sistema construye tu portafolio óptimo de forma completamente automática, eligiendo entre más de 200 empresas.','iqs1-link':'Ir al Constructor por Perfil →',
+    'iqs2-tag':'Para quien ya investigó','iqs2-title':'Ya tengo empresas en mente','iqs2-desc':'Tú eliges las empresas que quieres incluir y nosotros calculamos la proporción exacta de capital para maximizar tu rendimiento con el menor riesgo posible.','iqs2-link':'Ir a Crea tu Portafolio →',
+    'iqs3-tag':'Para el curioso','iqs3-title':'Quiero analizar una empresa','iqs3-desc':'Ingresa el nombre de cualquier empresa cotizada en bolsa y obtén su análisis completo: si su precio es justo, su tendencia reciente y una señal de inversión.','iqs3-link':'Ir al Análisis de Empresas →',
+    'ihow-h':'¿Cómo funciona el proceso?',
+    'ihow1-h':'Define cuánto riesgo puedes asumir','ihow1-p':'Indica si prefieres proteger tu capital ante todo (conservador), buscar un equilibrio entre seguridad y crecimiento (moderado), o maximizar el rendimiento aceptando mayor variabilidad (agresivo).',
+    'ihow2-h':'El motor analiza más de 200 empresas','ihow2-p':'Procesa cinco años de datos reales del mercado — acciones del S&P 500 de EE.UU. y del IPC de México — y calcula matemáticamente la combinación que ofrece el mayor rendimiento por cada unidad de riesgo.',
+    'ihow3-h':'Recibes instrucciones claras y precisas','ihow3-p':'Sabrás exactamente qué empresas comprar y qué porcentaje destinar a cada una. Puedes ver proyecciones históricas, comparativas con el mercado y exportar el resultado en PDF o Excel.',
+    'icta-h':'Empieza a invertir con fundamento','icta-btn1':'Construir mi portafolio','icta-btn2':'Analizar una empresa'
   },
   en:{
     'nav-intro':'Home','nav-builder':'Profile Builder','nav-custom':'Build Portfolio',
     'nav-analyzer':'Stock Analysis','nav-about':'About','nav-contact':'Contact',
-    'sm-head':'Settings'
+    'ih1':'Invest with precision,<br/><em>not with intuition</em>',
+    'isub':'Northbound Capital analyzes the market with mathematical models to tell you exactly what to invest in and at what proportion, tailored to your risk level. No prior experience needed.',
+    'ibtn':'Start analysis',
+    'ic-h':'New to investing? Start here.',
+    'ic-p':'A <strong>stock</strong> is a small ownership stake in a company. When you buy it, you become a proportional owner and participate in its profits.<br/><br/>An <strong>investment portfolio</strong> is the set of companies in which you distribute your capital. The key is not to pick one winner — it\'s combining them correctly to get the best possible return with the lowest risk. That\'s exactly what this tool calculates for you.',
+    'itr1-h':'Return','itr1-m':'The gain your investment generates over time, expressed as an annual percentage.','itr1-d':'For example: if you invest $10,000 and after one year they\'re worth $11,500, your return was 15% annually. This platform seeks to maximize it without requiring you to take on more risk than you\'re comfortable with.',
+    'itr2-h':'Risk','itr2-m':'The possibility that your investment loses value during certain periods. It can\'t be eliminated, but it can be controlled.','itr2-d':'All investments carry risk. The difference is how much you\'re willing to take on. If you don\'t like seeing your money fluctuate, choose a conservative profile. If you can tolerate swings in exchange for more growth, an aggressive profile may suit you better.',
+    'itr3-h':'Diversification','itr3-m':'Distributing your capital across different companies and sectors so that one\'s poor performance doesn\'t affect the whole.','itr3-d':'If you put all your money in one company and it performs badly, you lose everything. If you spread it across 15 companies in different sectors, the negative impact of one is offset by the others. That\'s the essence of diversification.',
+    'iqs-h':'How do you want to start?','iqs-sub':'Select the option that best describes your situation',
+    'iqs1-tag':'Recommended for beginners','iqs1-title':'I don\'t know where to start','iqs1-desc':'Answer three questions and the system builds your optimal portfolio automatically, choosing from over 200 companies.','iqs1-link':'Go to Profile Builder →',
+    'iqs2-tag':'For those who\'ve already researched','iqs2-title':'I already have companies in mind','iqs2-desc':'You select the companies you want to include and we calculate the exact capital allocation for each to maximize returns with minimal risk.','iqs2-link':'Go to Build Portfolio →',
+    'iqs3-tag':'For the curious','iqs3-title':'I want to analyze a company','iqs3-desc':'Enter the name of any publicly traded company and get a complete analysis: fair valuation, recent trend, and an investment signal.','iqs3-link':'Go to Stock Analysis →',
+    'ihow-h':'How does the process work?',
+    'ihow1-h':'Define how much risk you can take on','ihow1-p':'Indicate whether you prefer to protect your capital above all (conservative), seek a balance between safety and growth (moderate), or maximize returns by accepting more variability (aggressive).',
+    'ihow2-h':'The engine analyzes over 200 companies','ihow2-p':'It processes five years of real market data — S&P 500 stocks from the U.S. and Mexico\'s IPC — and mathematically calculates the combination that offers the highest return per unit of risk.',
+    'ihow3-h':'You receive clear, precise instructions','ihow3-p':'You\'ll know exactly which companies to buy and what percentage to allocate to each. You can view historical projections, market comparisons, and export the results in PDF or Excel.',
+    'icta-h':'Start investing with a solid foundation','icta-btn1':'Build my portfolio','icta-btn2':'Analyze a company'
   }
 };
 let _currentLang = localStorage.getItem('ac_lang') || 'es';
@@ -2772,7 +2815,7 @@ function switchLang(lang){
   const tl = _i18n[lang];
   if(!tl) return;
   Object.keys(tl).forEach(k=>{
-    document.querySelectorAll('[data-i18n="'+k+'"]').forEach(el=>{ el.textContent = tl[k]; });
+    document.querySelectorAll('[data-i18n="'+k+'"]').forEach(el=>{ el.innerHTML = tl[k]; });
   });
 }
 
