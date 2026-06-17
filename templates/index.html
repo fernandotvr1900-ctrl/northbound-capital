@@ -996,6 +996,59 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
   .about-info{padding:16px}
   .quiz-modal{padding:20px 16px}
 }
+
+/* ─── PÁGINA DE INICIO / INTRODUCCIÓN ─────────────────────── */
+.intro-hero{padding:60px 0 48px;text-align:center;max-width:700px;margin:0 auto}
+.intro-hero .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.63rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-600);background:var(--blue-50);border:1px solid var(--blue-100);padding:5px 14px;border-radius:99px;margin-bottom:22px}
+.intro-hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;letter-spacing:-.035em;line-height:1.12;margin-bottom:18px}
+.intro-hero h1 em{font-style:normal;color:var(--blue-600)}
+.intro-hero .hero-sub{font-size:1rem;color:var(--muted);line-height:1.75;max-width:560px;margin:0 auto 32px}
+
+.intro-concept{background:var(--blue-50);border:1px solid var(--blue-100);border-radius:var(--radius);padding:24px 28px;margin-bottom:36px}
+.intro-concept h2{font-size:.95rem;font-weight:700;margin-bottom:8px;color:var(--text)}
+.intro-concept p{font-size:.855rem;color:var(--dim);line-height:1.75}
+
+.intro-terms{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:0 0 52px}
+.intro-term{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 16px;text-align:center;box-shadow:var(--shadow-card)}
+.it-icon{font-size:1.8rem;margin-bottom:10px}
+.intro-term h4{font-size:.82rem;font-weight:700;margin-bottom:6px;color:var(--text)}
+.intro-term p{font-size:.77rem;color:var(--muted);line-height:1.6}
+
+.intro-section-title{text-align:center;margin-bottom:28px}
+.intro-section-title h2{font-size:clamp(1.25rem,3vw,1.75rem);font-weight:800;letter-spacing:-.025em;margin-bottom:8px}
+.intro-section-title p{font-size:.85rem;color:var(--muted)}
+
+.intro-tool-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:60px}
+.intro-tool-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:26px 22px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow-card);transition:box-shadow .2s,border-color .2s,transform .2s}
+.intro-tool-card:hover{box-shadow:var(--shadow-lg);border-color:var(--accent-l);transform:translateY(-3px)}
+.itc-icon{font-size:1.9rem;line-height:1;margin-bottom:4px}
+.intro-tool-card h3{font-size:.93rem;font-weight:700;color:var(--text)}
+.intro-tool-card p{font-size:.81rem;color:var(--muted);line-height:1.65;flex:1}
+
+.intro-how{margin-bottom:60px}
+.intro-how h2{font-size:clamp(1.25rem,3vw,1.75rem);font-weight:800;letter-spacing:-.025em;margin-bottom:32px;text-align:center}
+.intro-steps{display:flex;flex-direction:column;gap:0;max-width:580px;margin:0 auto}
+.intro-step{display:grid;grid-template-columns:52px 1fr;gap:18px;padding-bottom:28px;position:relative}
+.intro-step:not(:last-child)::before{content:'';position:absolute;left:25px;top:52px;bottom:0;width:2px;background:var(--border);border-radius:2px}
+.is-num{width:52px;height:52px;border-radius:50%;background:var(--blue-600);color:#fff;font-size:1.1rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:1;box-shadow:0 4px 12px rgba(37,99,235,.3)}
+.intro-step-text{padding-top:10px}
+.intro-step-text h4{font-size:.9rem;font-weight:700;margin-bottom:5px;color:var(--text)}
+.intro-step-text p{font-size:.81rem;color:var(--muted);line-height:1.65}
+
+.intro-cta{text-align:center;padding:48px 32px;background:linear-gradient(135deg,var(--blue-50) 0%,var(--card) 100%);border:1px solid var(--blue-100);border-radius:var(--radius);margin-bottom:64px}
+.intro-cta h2{font-size:clamp(1.25rem,3vw,1.75rem);font-weight:800;letter-spacing:-.025em;margin-bottom:10px}
+.intro-cta p{font-size:.875rem;color:var(--muted);margin-bottom:26px}
+.intro-cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+@media(max-width:720px){
+  .intro-terms{grid-template-columns:1fr 1fr}
+  .intro-tool-grid{grid-template-columns:1fr}
+  .intro-hero{padding:40px 0 36px}
+}
+@media(max-width:480px){
+  .intro-terms{grid-template-columns:1fr}
+  .intro-cta{padding:32px 20px}
+}
 </style>
 </head>
 <body>
@@ -1008,7 +1061,8 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
   <div class="nav-in">
     <div class="nav-brand"><img class="brand-logo" src="/static/northbound-logo.png" alt="Northbound Capital" onerror="(function(e){var s=document.createElement('span');s.className='brand-mark';s.textContent='NC';e.replaceWith(s);})(this)"/><span>Northbound Capital</span></div>
     <div class="nav-tabs">
-      <button class="ntab active" onclick="switchPage('builder')">Constructor por Perfil</button>
+      <button class="ntab active" onclick="switchPage('intro')">Inicio</button>
+      <button class="ntab" onclick="switchPage('builder')">Constructor por Perfil</button>
       <button class="ntab" onclick="switchPage('custom')">Crea tu Portafolio</button>
       <button class="ntab" onclick="switchPage('analyzer')">Análisis de Acciones</button>
       <button class="ntab" onclick="switchPage('about')">Sobre Northbound</button>
@@ -1019,9 +1073,115 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
 </nav>
 
 <!-- ══════════════════════════════════════════
+     PAG 0 — INICIO / INTRODUCCIÓN
+══════════════════════════════════════════ -->
+<div class="page active" id="page-intro">
+<div class="wrap">
+
+  <!-- Hero -->
+  <div class="intro-hero">
+    <div class="eyebrow">Para todos · Sin experiencia requerida</div>
+    <h1>Haz que tu dinero<br/><em>trabaje más inteligente</em></h1>
+    <p class="hero-sub">Esta herramienta gratuita usa matemáticas financieras para armar el portafolio de inversión ideal según tu perfil — sin que necesites saber nada de finanzas.</p>
+    <button onclick="switchPage('builder')" class="btn btn-primary" style="padding:14px 32px;font-size:.95rem;font-weight:700">Quiero optimizar mi portafolio →</button>
+  </div>
+
+  <!-- ¿Qué es un portafolio? -->
+  <div class="intro-concept">
+    <h2>💡 ¿Qué es un portafolio de inversión?</h2>
+    <p>Es simplemente el conjunto de acciones en las que decides poner tu dinero. La clave está en <strong>cómo los combinas</strong>: si eliges bien, puedes ganar más sin asumir más riesgo. Northbound Capital hace ese cálculo por ti de forma automática.</p>
+  </div>
+
+  <!-- 3 conceptos clave -->
+  <div class="intro-terms">
+    <div class="intro-term">
+      <div class="it-icon">📈</div>
+      <h4>Rendimiento</h4>
+      <p>Cuánto gana tu dinero con el tiempo. Esta herramienta lo maximiza.</p>
+    </div>
+    <div class="intro-term">
+      <div class="it-icon">⚖️</div>
+      <h4>Riesgo</h4>
+      <p>Qué tanto puede bajar tu inversión. Lo mantenemos bajo control según tu perfil.</p>
+    </div>
+    <div class="intro-term">
+      <div class="it-icon">🌐</div>
+      <h4>Diversificación</h4>
+      <p>No poner todos los huevos en una canasta. La base de cualquier buena inversión.</p>
+    </div>
+  </div>
+
+  <!-- 3 herramientas -->
+  <div class="intro-section-title">
+    <h2>¿Qué puedes hacer aquí?</h2>
+    <p>Tres herramientas para inversionistas de cualquier nivel</p>
+  </div>
+  <div class="intro-tool-grid">
+    <div class="intro-tool-card">
+      <div class="itc-icon">🎯</div>
+      <h3>Constructor por Perfil</h3>
+      <p>Responde unas preguntas sobre tu tolerancia al riesgo y te armamos el portafolio óptimo automáticamente desde 200+ acciones. Ideal para empezar desde cero.</p>
+      <button onclick="switchPage('builder')" class="btn btn-ghost btn-sm" style="margin-top:8px">Ir al constructor →</button>
+    </div>
+    <div class="intro-tool-card">
+      <div class="itc-icon">⚙️</div>
+      <h3>Crea tu Portafolio</h3>
+      <p>¿Ya sabes qué acciones quieres incluir? Agrégalas tú mismo y el sistema calcula cuánto poner en cada una para maximizar tu relación riesgo-retorno.</p>
+      <button onclick="switchPage('custom')" class="btn btn-ghost btn-sm" style="margin-top:8px">Personalizar mi portafolio →</button>
+    </div>
+    <div class="intro-tool-card">
+      <div class="itc-icon">📊</div>
+      <h3>Análisis de Acciones</h3>
+      <p>Busca cualquier acción y obtén métricas clave: si está cara o barata según sus fundamentos, su tendencia reciente, señales de compra o venta y más.</p>
+      <button onclick="switchPage('analyzer')" class="btn btn-ghost btn-sm" style="margin-top:8px">Analizar una acción →</button>
+    </div>
+  </div>
+
+  <!-- Cómo funciona -->
+  <div class="intro-how">
+    <h2>¿Cómo funciona?</h2>
+    <div class="intro-steps">
+      <div class="intro-step">
+        <div class="is-num">1</div>
+        <div class="intro-step-text">
+          <h4>Elige tu perfil de riesgo</h4>
+          <p>Conservador, moderado o agresivo — según cuánto puedes permitirte perder temporalmente y en cuánto tiempo necesitas el dinero.</p>
+        </div>
+      </div>
+      <div class="intro-step">
+        <div class="is-num">2</div>
+        <div class="intro-step-text">
+          <h4>El sistema analiza 200+ acciones</h4>
+          <p>Usa 5 años de datos reales del mercado (S&amp;P 500 + IPC de México) para calcular qué combinación de acciones da el mejor rendimiento por cada unidad de riesgo que asumes.</p>
+        </div>
+      </div>
+      <div class="intro-step">
+        <div class="is-num">3</div>
+        <div class="intro-step-text">
+          <h4>Recibes tu portafolio óptimo</h4>
+          <p>Con el porcentaje exacto a invertir en cada acción. Puedes ver proyecciones, backtesting histórico, comparativas y exportar todo en PDF o Excel.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA final -->
+  <div class="intro-cta">
+    <h2>¿Listo para invertir mejor?</h2>
+    <p>Es gratis. Sin registro. Sin tarjeta. Solo entra y empieza.</p>
+    <div class="intro-cta-btns">
+      <button onclick="switchPage('builder')" class="btn btn-primary" style="padding:12px 28px;font-size:.9rem;font-weight:700">Construir mi portafolio</button>
+      <button onclick="switchPage('analyzer')" class="btn btn-ghost" style="padding:12px 24px;font-size:.9rem">Analizar una acción</button>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════
      PAG 1 — CONSTRUCTOR POR PERFIL
 ══════════════════════════════════════════ -->
-<div class="page active" id="page-builder">
+<div class="page" id="page-builder">
 <div class="wrap">
   <!-- Results compact bar (hidden until optimization runs) -->
   <div class="results-bar" id="resultsBar">
@@ -1565,7 +1725,7 @@ const btData = {};   // { sectionId: {tickers, weights} }
 function switchPage(p){
   document.querySelectorAll('.page').forEach(el=>el.classList.remove('active'));
   document.getElementById('page-'+p).classList.add('active');
-  const order=['builder','custom','analyzer','about','contact'];
+  const order=['intro','builder','custom','analyzer','about','contact'];
   document.querySelectorAll('.ntab').forEach((t,i)=>t.classList.toggle('active',order[i]===p));
   window.scrollTo({top:0,behavior:'smooth'});
 }
