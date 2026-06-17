@@ -1055,6 +1055,76 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
   .intro-terms{grid-template-columns:1fr}
   .intro-cta{padding:28px 18px}
 }
+
+/* ─── HAMBURGER + SIDE MENU ──────────────────────────────── */
+.ham-btn{display:flex;flex-direction:column;gap:5px;align-items:center;justify-content:center;background:none;border:none;cursor:pointer;color:var(--text);padding:7px;border-radius:var(--r-sm);width:36px;height:36px;flex-shrink:0;transition:background .15s;margin-left:auto}
+.ham-btn:hover{background:var(--surface)}
+.ham-line{width:19px;height:2px;background:currentColor;border-radius:2px;transition:transform .25s,opacity .2s}
+.ham-btn.open .ham-line:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.ham-btn.open .ham-line:nth-child(2){opacity:0}
+.ham-btn.open .ham-line:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+.sm-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.32);opacity:0;pointer-events:none;transition:opacity .25s;z-index:299}
+.sm-backdrop.open{opacity:1;pointer-events:auto}
+
+.side-menu{position:fixed;top:0;right:0;bottom:0;width:276px;background:var(--card);border-left:1px solid var(--border);box-shadow:var(--shadow-lg);transform:translateX(100%);transition:transform .28s cubic-bezier(.22,1,.36,1);z-index:300;display:flex;flex-direction:column;overflow-y:auto}
+.side-menu.open{transform:translateX(0)}
+.sm-head{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid var(--border)}
+.sm-head-title{font-size:.82rem;font-weight:700;color:var(--text)}
+.sm-close-btn{background:none;border:1px solid var(--border);cursor:pointer;color:var(--muted);padding:3px 10px;border-radius:var(--r-xs);font-size:.76rem;transition:all .15s;font-family:inherit}
+.sm-close-btn:hover{color:var(--text);border-color:var(--border-hover)}
+.sm-sect{padding:16px 20px;border-bottom:1px solid var(--border)}
+.sm-sect-lbl{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.sm-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:5px 0}
+.sm-row-info{flex:1;min-width:0}
+.sm-row-label{font-size:.82rem;color:var(--text);font-weight:500}
+.sm-row-sub{font-size:.71rem;color:var(--muted);margin-top:2px}
+.tog-wrap{position:relative;display:inline-block;width:44px;height:24px;flex-shrink:0}
+.tog-input{position:absolute;opacity:0;width:0;height:0}
+.tog-track{position:absolute;inset:0;border-radius:99px;background:var(--border2);transition:background .2s;cursor:pointer}
+.tog-thumb{position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.2);transition:transform .2s;pointer-events:none}
+.tog-input:checked~.tog-track{background:var(--blue-600)}
+.tog-input:checked~.tog-thumb{transform:translateX(20px)}
+.lang-pills{display:flex;gap:6px}
+.lang-pill{padding:5px 14px;border-radius:99px;font-size:.76rem;font-weight:600;border:1px solid var(--border2);background:none;color:var(--muted);cursor:pointer;transition:all .15s;font-family:inherit}
+.lang-pill.active{background:var(--blue-600);color:#fff;border-color:var(--blue-600)}
+.sm-action-btn{display:flex;align-items:center;gap:10px;width:100%;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);cursor:pointer;font-size:.79rem;color:var(--text);font-weight:500;transition:background .15s,border-color .15s;font-family:inherit;text-align:left;margin-top:6px}
+.sm-action-btn:hover{background:var(--card-hover);border-color:var(--border-hover)}
+.sm-action-btn:first-child{margin-top:2px}
+.sm-copied{font-size:.7rem;color:var(--green);font-weight:600;margin-left:auto;display:none}
+.sm-copied.show{display:inline}
+.sm-footer{padding:16px 20px;margin-top:auto}
+.sm-disclaimer{font-size:.68rem;color:var(--muted);line-height:1.65}
+
+/* ─── INTRO INTERACTIVO ──────────────────────────────────── */
+/* Quick-start cards */
+.intro-qs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:44px}
+.qs-card{background:var(--card);border:1px solid var(--border);border-top:3px solid var(--border2);border-radius:var(--radius);padding:26px 22px;cursor:pointer;display:flex;flex-direction:column;gap:8px;box-shadow:var(--shadow-card);transition:box-shadow .2s,transform .2s,border-top-color .2s}
+.qs-card:hover,.qs-card:focus-visible{box-shadow:var(--shadow-lg);transform:translateY(-4px);outline:none}
+.qs-card.qsc-1:hover,.qs-card.qsc-1:focus-visible{border-top-color:var(--green-l)}
+.qs-card.qsc-2:hover,.qs-card.qsc-2:focus-visible{border-top-color:var(--blue-600)}
+.qs-card.qsc-3:hover,.qs-card.qsc-3:focus-visible{border-top-color:var(--purple-l)}
+.qs-tag{font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.qs-title{font-size:1rem;font-weight:700;color:var(--text);line-height:1.3}
+.qs-desc{font-size:.8rem;color:var(--muted);line-height:1.65;flex:1}
+.qs-link{font-size:.78rem;font-weight:600;color:var(--blue-600);margin-top:4px}
+.qs-card.qsc-1:hover .qs-link{color:var(--green-l)}
+.qs-card.qsc-3:hover .qs-link{color:var(--purple-l)}
+/* Term cards expandibles */
+.intro-term{cursor:pointer;user-select:none;transition:box-shadow .2s}
+.intro-term:hover{box-shadow:var(--shadow-md)}
+.term-head{display:flex;align-items:center;justify-content:space-between}
+.intro-term h4{margin-bottom:0}
+.term-chevron{font-size:.9rem;font-weight:700;color:var(--blue-600);transition:transform .22s;flex-shrink:0;margin-left:8px;line-height:1}
+.intro-term.expanded .term-chevron{transform:rotate(45deg)}
+.term-main{font-size:.845rem;color:var(--muted);line-height:1.7;margin-top:10px}
+.term-detail{display:none;font-size:.79rem;color:var(--muted);line-height:1.67;margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}
+.intro-term.expanded .term-detail{display:block}
+/* Scroll reveal */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.reveal.visible{opacity:1;transform:none}
+.reveal-d1{transition-delay:.07s}.reveal-d2{transition-delay:.14s}.reveal-d3{transition-delay:.21s}
+@media(max-width:720px){.intro-qs-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -1062,19 +1132,80 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
 <div class="glow g1"></div>
 <div class="glow g2"></div>
 
+<!-- BACKDROP + SIDE MENU -->
+<div class="sm-backdrop" id="smBackdrop" onclick="toggleMenu()"></div>
+<div class="side-menu" id="sideMenu">
+  <div class="sm-head">
+    <span class="sm-head-title">Opciones</span>
+    <button class="sm-close-btn" onclick="toggleMenu()">Cerrar ✕</button>
+  </div>
+  <!-- Apariencia -->
+  <div class="sm-sect">
+    <div class="sm-sect-lbl">Apariencia</div>
+    <div class="sm-row">
+      <div class="sm-row-info">
+        <div class="sm-row-label">Modo oscuro</div>
+        <div class="sm-row-sub">Cambia el tema de color</div>
+      </div>
+      <label class="tog-wrap">
+        <input type="checkbox" class="tog-input" id="darkToggle" onchange="toggleMode()">
+        <span class="tog-track"></span>
+        <span class="tog-thumb"></span>
+      </label>
+    </div>
+  </div>
+  <!-- Idioma -->
+  <div class="sm-sect">
+    <div class="sm-sect-lbl">Idioma · Language</div>
+    <div class="sm-row">
+      <div class="sm-row-info">
+        <div class="sm-row-label">Selecciona el idioma</div>
+        <div class="sm-row-sub">Cambia el idioma de la plataforma</div>
+      </div>
+      <div class="lang-pills">
+        <button class="lang-pill active" data-lang="es" onclick="switchLang('es')">ES</button>
+        <button class="lang-pill" data-lang="en" onclick="switchLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
+  <!-- Compartir -->
+  <div class="sm-sect">
+    <div class="sm-sect-lbl">Compartir</div>
+    <button class="sm-action-btn" onclick="sharePage()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+      Copiar enlace de la página
+      <span class="sm-copied" id="smCopied">¡Copiado!</span>
+    </button>
+  </div>
+  <!-- Navegación rápida -->
+  <div class="sm-sect">
+    <div class="sm-sect-lbl">Accesos directos</div>
+    <button class="sm-action-btn" onclick="switchPage('builder');toggleMenu()">Constructor por Perfil</button>
+    <button class="sm-action-btn" onclick="switchPage('custom');toggleMenu()">Crea tu Portafolio</button>
+    <button class="sm-action-btn" onclick="switchPage('analyzer');toggleMenu()">Análisis de Acciones</button>
+    <button class="sm-action-btn" onclick="switchPage('about');toggleMenu()">Sobre Northbound Capital</button>
+  </div>
+  <!-- Footer -->
+  <div class="sm-footer">
+    <p class="sm-disclaimer">Datos de mercado provistos por Yahoo Finance. Esta plataforma es exclusivamente para fines educativos e informativos — no constituye asesoramiento financiero ni una oferta de inversión.</p>
+  </div>
+</div>
+
 <!-- NAV -->
 <nav>
   <div class="nav-in">
     <div class="nav-brand"><img class="brand-logo" src="/static/northbound-logo.png" alt="Northbound Capital" onerror="(function(e){var s=document.createElement('span');s.className='brand-mark';s.textContent='NC';e.replaceWith(s);})(this)"/><span>Northbound Capital</span></div>
     <div class="nav-tabs">
-      <button class="ntab active" onclick="switchPage('intro')">Inicio</button>
-      <button class="ntab" onclick="switchPage('builder')">Constructor por Perfil</button>
-      <button class="ntab" onclick="switchPage('custom')">Crea tu Portafolio</button>
-      <button class="ntab" onclick="switchPage('analyzer')">Análisis de Acciones</button>
-      <button class="ntab" onclick="switchPage('about')">Sobre Northbound</button>
-      <button class="ntab" onclick="switchPage('contact')">Contacto</button>
+      <button class="ntab active" onclick="switchPage('intro')" data-i18n="nav-intro">Inicio</button>
+      <button class="ntab" onclick="switchPage('builder')" data-i18n="nav-builder">Constructor por Perfil</button>
+      <button class="ntab" onclick="switchPage('custom')" data-i18n="nav-custom">Crea tu Portafolio</button>
+      <button class="ntab" onclick="switchPage('analyzer')" data-i18n="nav-analyzer">Análisis de Acciones</button>
+      <button class="ntab" onclick="switchPage('about')" data-i18n="nav-about">Sobre Northbound</button>
+      <button class="ntab" onclick="switchPage('contact')" data-i18n="nav-contact">Contacto</button>
     </div>
-    <button class="mode-btn" id="modeBtn" onclick="toggleMode()"><span class="mode-label">Modo oscuro</span><span class="mode-icon" aria-hidden="true">☀</span></button>
+    <button class="ham-btn" id="hamBtn" onclick="toggleMenu()" aria-label="Opciones">
+      <span class="ham-line"></span><span class="ham-line"></span><span class="ham-line"></span>
+    </button>
   </div>
 </nav>
 
@@ -1100,50 +1231,53 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
     </div>
   </div>
 
-  <!-- 3 conceptos clave -->
-  <div class="intro-terms">
-    <div class="intro-term">
-      <h4>Rendimiento</h4>
-      <p>La ganancia que genera tu inversión con el tiempo, expresada como porcentaje anual. Esta plataforma busca maximizarlo dentro de los límites de tu perfil.</p>
+  <!-- 3 conceptos clave — expandibles al hacer clic -->
+  <div class="intro-terms reveal">
+    <div class="intro-term reveal-d1" onclick="toggleTerm(this)" tabindex="0" role="button" aria-expanded="false">
+      <div class="term-head"><h4>Rendimiento</h4><span class="term-chevron">+</span></div>
+      <p class="term-main">La ganancia que genera tu inversión con el tiempo, expresada como porcentaje anual.</p>
+      <p class="term-detail">Por ejemplo: si inviertes $10,000 y al cabo de un año valen $11,500, tu rendimiento fue del 15% anual. Esta plataforma busca maximizarlo sin que tengas que asumir más riesgo del que estás dispuesto a tolerar.</p>
     </div>
-    <div class="intro-term">
-      <h4>Riesgo</h4>
-      <p>La posibilidad de que tu inversión baje de valor en ciertos períodos. No es algo que se elimina, pero sí se controla. Aquí lo ajustamos según cuánta variación estás dispuesto a tolerar.</p>
+    <div class="intro-term reveal-d2" onclick="toggleTerm(this)" tabindex="0" role="button" aria-expanded="false">
+      <div class="term-head"><h4>Riesgo</h4><span class="term-chevron">+</span></div>
+      <p class="term-main">La posibilidad de que tu inversión baje de valor en ciertos períodos. No se elimina, pero sí se controla.</p>
+      <p class="term-detail">Todas las inversiones tienen riesgo. La diferencia está en cuánto estás dispuesto a asumir. Si no te gusta ver tu dinero fluctuar, elige un perfil conservador. Si puedes tolerar variaciones a cambio de mayor crecimiento, un perfil agresivo puede ser mejor para ti.</p>
     </div>
-    <div class="intro-term">
-      <h4>Diversificación</h4>
-      <p>Distribuir tu capital entre distintas empresas y sectores para que el mal desempeño de una no afecte al conjunto. Es el principio más importante de cualquier estrategia de inversión.</p>
+    <div class="intro-term reveal-d3" onclick="toggleTerm(this)" tabindex="0" role="button" aria-expanded="false">
+      <div class="term-head"><h4>Diversificación</h4><span class="term-chevron">+</span></div>
+      <p class="term-main">Distribuir tu capital entre distintas empresas y sectores para que el mal desempeño de una no afecte al conjunto.</p>
+      <p class="term-detail">Si pones todo tu dinero en una sola empresa y le va mal, pierdes todo. Si lo distribuyes entre 15 empresas de distintos sectores, el impacto negativo de una queda compensado por las demás. Esa es la esencia de la diversificación.</p>
     </div>
   </div>
 
-  <!-- 3 herramientas -->
-  <div class="intro-section-title">
-    <h2>¿Qué puedes hacer en esta plataforma?</h2>
-    <p>Tres herramientas para tomar decisiones de inversión con fundamento</p>
+  <!-- Selector interactivo de punto de entrada -->
+  <div class="intro-section-title reveal">
+    <h2>¿Cómo quieres comenzar?</h2>
+    <p>Selecciona la opción que mejor describe tu situación</p>
   </div>
-  <div class="intro-tool-grid">
-    <div class="intro-tool-card">
-      <div class="itc-label">01</div>
-      <h3>Constructor por Perfil</h3>
-      <p>Responde tres preguntas sobre tu situación financiera y horizonte de inversión. El sistema selecciona y combina automáticamente las mejores empresas del mercado para tu perfil de riesgo.</p>
-      <button onclick="switchPage('builder')" class="btn btn-ghost btn-sm" style="margin-top:8px">Ir al constructor</button>
+  <div class="intro-qs-grid">
+    <div class="qs-card qsc-1 reveal reveal-d1" onclick="switchPage('builder')" tabindex="0" role="button" onkeydown="if(event.key==='Enter')switchPage('builder')">
+      <div class="qs-tag">Recomendado para principiantes</div>
+      <div class="qs-title">No sé por dónde empezar</div>
+      <p class="qs-desc">Responde tres preguntas y el sistema construye tu portafolio óptimo de forma completamente automática, eligiendo entre más de 200 empresas.</p>
+      <div class="qs-link">Ir al Constructor por Perfil →</div>
     </div>
-    <div class="intro-tool-card">
-      <div class="itc-label">02</div>
-      <h3>Crea tu Portafolio</h3>
-      <p>Si ya tienes empresas en mente, tú las seleccionas y la plataforma calcula la proporción exacta de capital a destinar a cada una para maximizar el rendimiento con el menor riesgo posible.</p>
-      <button onclick="switchPage('custom')" class="btn btn-ghost btn-sm" style="margin-top:8px">Armar portafolio propio</button>
+    <div class="qs-card qsc-2 reveal reveal-d2" onclick="switchPage('custom')" tabindex="0" role="button" onkeydown="if(event.key==='Enter')switchPage('custom')">
+      <div class="qs-tag">Para quien ya investigó</div>
+      <div class="qs-title">Ya tengo empresas en mente</div>
+      <p class="qs-desc">Tú eliges las empresas que quieres incluir y nosotros calculamos la proporción exacta de capital para maximizar tu rendimiento con el menor riesgo posible.</p>
+      <div class="qs-link">Ir a Crea tu Portafolio →</div>
     </div>
-    <div class="intro-tool-card">
-      <div class="itc-label">03</div>
-      <h3>Análisis de Empresas</h3>
-      <p>Ingresa el nombre o símbolo bursátil de cualquier empresa y obtén un análisis completo: si su precio actual es justo o elevado, su tendencia reciente y una señal de inversión basada en datos.</p>
-      <button onclick="switchPage('analyzer')" class="btn btn-ghost btn-sm" style="margin-top:8px">Analizar una empresa</button>
+    <div class="qs-card qsc-3 reveal reveal-d3" onclick="switchPage('analyzer')" tabindex="0" role="button" onkeydown="if(event.key==='Enter')switchPage('analyzer')">
+      <div class="qs-tag">Para el curioso</div>
+      <div class="qs-title">Quiero analizar una empresa</div>
+      <p class="qs-desc">Ingresa el nombre de cualquier empresa cotizada en bolsa y obtén su análisis completo: si su precio es justo, su tendencia reciente y una señal de inversión.</p>
+      <div class="qs-link">Ir al Análisis de Empresas →</div>
     </div>
   </div>
 
   <!-- Cómo funciona -->
-  <div class="intro-how">
+  <div class="intro-how reveal">
     <h2>¿Cómo funciona el proceso?</h2>
     <div class="intro-steps">
       <div class="intro-step">
@@ -2593,25 +2727,77 @@ function renderAnalysis(data){
 ════════════════════════════════════════════════════ */
 function toggleMode(){
   const isDark = document.body.classList.toggle('dark');
-  const btn = document.getElementById('modeBtn');
-  const lbl = btn.querySelector('.mode-label');
-  const ico = btn.querySelector('.mode-icon');
-  if(lbl) lbl.textContent = isDark ? 'Modo claro' : 'Modo oscuro';
-  if(ico) ico.textContent = isDark ? '☾' : '☀';
+  const tog = document.getElementById('darkToggle');
+  if(tog) tog.checked = isDark;
   localStorage.setItem('ac_mode', isDark ? 'dark' : 'light');
 }
+
+function toggleMenu(){
+  const menu = document.getElementById('sideMenu');
+  const backdrop = document.getElementById('smBackdrop');
+  const btn = document.getElementById('hamBtn');
+  if(!menu) return;
+  const isOpen = menu.classList.toggle('open');
+  backdrop.classList.toggle('open', isOpen);
+  btn.classList.toggle('open', isOpen);
+}
+
+function sharePage(){
+  const url = window.location.href;
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(url).then(()=>{
+      const el = document.getElementById('smCopied');
+      if(el){ el.classList.add('show'); setTimeout(()=>el.classList.remove('show'),2200); }
+    });
+  }
+}
+
+const _i18n = {
+  es:{
+    'nav-intro':'Inicio','nav-builder':'Constructor por Perfil','nav-custom':'Crea tu Portafolio',
+    'nav-analyzer':'Análisis de Acciones','nav-about':'Sobre Northbound','nav-contact':'Contacto',
+    'sm-head':'Opciones'
+  },
+  en:{
+    'nav-intro':'Home','nav-builder':'Profile Builder','nav-custom':'Build Portfolio',
+    'nav-analyzer':'Stock Analysis','nav-about':'About','nav-contact':'Contact',
+    'sm-head':'Settings'
+  }
+};
+let _currentLang = localStorage.getItem('ac_lang') || 'es';
+function switchLang(lang){
+  _currentLang = lang;
+  localStorage.setItem('ac_lang', lang);
+  document.querySelectorAll('.lang-pill').forEach(p=>p.classList.toggle('active', p.dataset.lang===lang));
+  const tl = _i18n[lang];
+  if(!tl) return;
+  Object.keys(tl).forEach(k=>{
+    document.querySelectorAll('[data-i18n="'+k+'"]').forEach(el=>{ el.textContent = tl[k]; });
+  });
+}
+
+function toggleTerm(el){
+  const isExp = el.classList.toggle('expanded');
+  el.setAttribute('aria-expanded', isExp);
+}
+
 (function(){
   if(localStorage.getItem('ac_mode')==='dark'){
     document.body.classList.add('dark');
-    document.addEventListener('DOMContentLoaded',()=>{
-      const btn=document.getElementById('modeBtn');
-      if(!btn) return;
-      const lbl=btn.querySelector('.mode-label');
-      const ico=btn.querySelector('.mode-icon');
-      if(lbl) lbl.textContent='Modo claro';
-      if(ico) ico.textContent='☾';
-    });
   }
+  document.addEventListener('DOMContentLoaded',()=>{
+    /* Sync dark toggle */
+    const tog = document.getElementById('darkToggle');
+    if(tog && document.body.classList.contains('dark')) tog.checked = true;
+    /* Apply stored language */
+    const storedLang = localStorage.getItem('ac_lang');
+    if(storedLang && storedLang !== 'es') switchLang(storedLang);
+    /* Scroll reveal */
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    },{threshold:0.08});
+    document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  });
 })();
 
 /* ════════════════════════════════════════════════════
