@@ -130,9 +130,12 @@ body.dark .obj-opt span strong{color:var(--text)}
 body.dark .clbl-badge{background:rgba(37,99,235,.12);border-color:rgba(37,99,235,.2);color:#4b7fff}
 body.dark .nav-brand{color:var(--text)}
 /* ─── Toggle modo ────────────────────────────────── */
-.mode-btn{margin-left:auto;background:none;border:1px solid var(--border);color:var(--muted);border-radius:20px;padding:4px 13px;font-size:.71rem;font-weight:600;cursor:pointer;transition:all .2s;font-family:inherit;letter-spacing:.03em}
+.mode-btn{margin-left:auto;background:none;border:1px solid var(--border);color:var(--muted);border-radius:20px;padding:4px 13px;font-size:.71rem;font-weight:600;cursor:pointer;transition:all .2s;font-family:inherit;letter-spacing:.03em;white-space:nowrap;flex-shrink:0;display:flex;align-items:center;gap:5px}
 .mode-btn:hover{border-color:var(--border2);color:var(--text);background:rgba(0,0,0,.04)}
 body.dark .mode-btn:hover{background:rgba(255,255,255,.04)}
+.mode-icon{display:none;font-size:.85rem;line-height:1}
+/* En móvil pequeño: solo muestra el ícono */
+@media(max-width:480px){.mode-label{display:none}.mode-icon{display:inline}}
 /* ─── Export buttons ─────────────────────────────── */
 .export-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:24px}
 .btn-export{
@@ -750,9 +753,9 @@ footer::before{display:none}
 .contact-hero h2{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:800;letter-spacing:-.03em;margin-bottom:10px}
 .contact-hero p{font-size:.86rem;color:var(--muted);max-width:540px;line-height:1.7}
 
-/* Profile card — 3 zonas: foto · identidad · mapa */
+/* Profile card — 2 zonas: foto · identidad */
 .about-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);
-  box-shadow:var(--shadow);overflow:hidden;display:grid;grid-template-columns:230px 1fr 230px;margin-bottom:16px}
+  box-shadow:var(--shadow);overflow:hidden;display:grid;grid-template-columns:230px 1fr;margin-bottom:16px}
 @media(max-width:920px){.about-card{grid-template-columns:200px 1fr}}
 @media(max-width:680px){.about-card{grid-template-columns:1fr}}
 .contact-photo{position:relative;background:linear-gradient(160deg,var(--blue-600),var(--purple));
@@ -840,8 +843,15 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
   .solver-params{grid-template-columns:1fr}
   .acg{grid-template-columns:1fr 1fr}
   .bt-metrics{grid-template-columns:repeat(2,1fr)}
-  .about-card{grid-template-columns:200px 1fr}
+  .about-card{grid-template-columns:200px 1fr!important}
   .about-sections{grid-template-columns:1fr 1fr}
+}
+/* Nav scroll fade — indica más tabs a la derecha */
+@media(max-width:900px){
+  .nav-tabs{
+    -webkit-mask-image:linear-gradient(to right,black calc(100% - 32px),transparent 100%);
+    mask-image:linear-gradient(to right,black calc(100% - 32px),transparent 100%);
+  }
 }
 
 /* ── Móvil grande (≤680px) ── */
@@ -935,11 +945,15 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
   .solver-params{grid-template-columns:1fr}
   .selected-stocks{min-height:36px;padding:10px 12px}
 
+  /* Charts — override inline styles */
+  .cgrid{grid-template-columns:1fr!important}
+
   /* About / Contact */
-  .about-card{grid-template-columns:1fr}
-  .contact-photo{min-height:220px}
-  .about-info{padding:20px 20px}
-  .ci-name{font-size:1.3rem}
+  .about-card{grid-template-columns:1fr!important;display:flex!important;flex-direction:column!important}
+  .contact-photo{min-height:240px;width:100%}
+  .about-info{padding:22px 20px}
+  .ci-name{font-size:1.25rem}
+  .ci-spec{font-size:.78rem}
   .about-sections{grid-template-columns:1fr}
   .about-block{padding:18px 20px}
   .method-card{padding:20px 20px}
@@ -999,7 +1013,7 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
       <button class="ntab" onclick="switchPage('about')">Sobre Northbound</button>
       <button class="ntab" onclick="switchPage('contact')">Contacto</button>
     </div>
-    <button class="mode-btn" id="modeBtn" onclick="toggleMode()">Modo oscuro</button>
+    <button class="mode-btn" id="modeBtn" onclick="toggleMode()"><span class="mode-label">Modo oscuro</span><span class="mode-icon" aria-hidden="true">☀</span></button>
   </div>
 </nav>
 
@@ -1364,7 +1378,7 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
   </div>
 
   <!-- Tarjeta de perfil -->
-  <div class="about-card" style="grid-template-columns:230px 1fr;">
+  <div class="about-card">
     <div class="contact-photo">
       <div class="cp-fallback" id="cpFallback">LT</div>
       <img src="/static/Fernando%20Tovar.jpg" alt="Luis Fernando Tovar Berrocal"
@@ -2198,7 +2212,7 @@ function renderCustomResults(data, objective){
     </div>
 
     <!-- Gráfico contribución al riesgo -->
-    <div class="cgrid" style="grid-template-columns:1fr 1.2fr;">
+    <div class="cgrid">
       <div class="cc">
         <div class="clbl" style="margin-bottom:16px;">Contribución marginal al riesgo</div>
         <div class="rchart-wrap" id="riskChart"></div>
@@ -2419,15 +2433,23 @@ function renderAnalysis(data){
 ════════════════════════════════════════════════════ */
 function toggleMode(){
   const isDark = document.body.classList.toggle('dark');
-  document.getElementById('modeBtn').textContent = isDark ? 'Modo claro' : 'Modo oscuro';
+  const btn = document.getElementById('modeBtn');
+  const lbl = btn.querySelector('.mode-label');
+  const ico = btn.querySelector('.mode-icon');
+  if(lbl) lbl.textContent = isDark ? 'Modo claro' : 'Modo oscuro';
+  if(ico) ico.textContent = isDark ? '☾' : '☀';
   localStorage.setItem('ac_mode', isDark ? 'dark' : 'light');
 }
 (function(){
   if(localStorage.getItem('ac_mode')==='dark'){
     document.body.classList.add('dark');
     document.addEventListener('DOMContentLoaded',()=>{
-      const b=document.getElementById('modeBtn');
-      if(b) b.textContent='Modo claro';
+      const btn=document.getElementById('modeBtn');
+      if(!btn) return;
+      const lbl=btn.querySelector('.mode-label');
+      const ico=btn.querySelector('.mode-icon');
+      if(lbl) lbl.textContent='Modo claro';
+      if(ico) ico.textContent='☾';
     });
   }
 })();
@@ -2631,7 +2653,7 @@ function renderBacktestResults(sectionId, d){
     </div>
 
     <!-- Gráfico: drawdown -->
-    <div class="cgrid" style="grid-template-columns:1fr 1fr;gap:16px;">
+    <div class="cgrid" style="gap:16px;">
       <div class="bt-chart-wrap" style="margin-bottom:0;">
         <div class="bt-chart-lbl">Drawdown del portafolio</div>
         <div style="position:relative;height:160px;"><canvas id="${sectionId}-ddChart"></canvas></div>
