@@ -1145,6 +1145,7 @@ body.dark .ci-row{border-color:rgba(255,255,255,.08)}
 
 
 /* ── CONSISTENCIA VISUAL — gradiente suave en todas las páginas ── */
+#page-intro{background:var(--bg)}
 #page-builder,#page-custom,#page-analyzer,#page-about,#page-contact{
   background:linear-gradient(180deg,var(--lp-blue-50) 0px,var(--bg) 280px);
 }
@@ -1182,7 +1183,7 @@ body.dark .hero-copy h1,body.dark .cp-hero h2,body.dark .az-hero h2,body.dark .c
 /* ── HERO ─────────────────────────────────────────────────── */
 .lp-hero{
   position:relative;overflow:hidden;
-  background:linear-gradient(180deg,var(--lp-blue-50) 0%,#fff 100%);
+  background:linear-gradient(180deg,var(--lp-blue-50) 0%,var(--bg) 100%);
   padding:60px 28px 48px;text-align:center;
 }
 body.dark .lp-hero{background:linear-gradient(180deg,#0d1f3c 0%,var(--bg) 100%)}
@@ -1384,14 +1385,36 @@ body.dark .lp-trust-icon svg{stroke:#60A5FA}
   .lp-trust-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:620px){
-  .lp-hero{padding:60px 20px 56px}
+  .lp-hero{padding:48px 18px 40px}
   .lp-hero-btns{flex-direction:column;align-items:center}
   .lp-btn-prim,.lp-btn-sec{width:100%;max-width:320px;text-align:center}
   .lp-stats-grid{grid-template-columns:1fr 1fr}
   .lp-trust-grid{grid-template-columns:1fr}
   .lp-cta-card-btns{flex-direction:column;align-items:center}
   .lp-btn-cta-main,.lp-btn-cta-sec{width:100%;max-width:300px}
-  .lp-how,.lp-stats,.lp-comparator,.lp-trust,.lp-final-cta{padding-top:56px;padding-bottom:56px}
+  .lp-how,.lp-stats,.lp-comparator,.lp-trust{padding:40px 18px}
+  .lp-final-cta{padding:0 18px 40px}
+  .lp-section-title{margin-bottom:24px}
+  .lp-wrap{padding:0 18px}
+  .lp-cta-card{padding:44px 24px}
+  .lp-steps-grid{gap:14px}
+}
+@media(max-width:400px){
+  .lp-hero{padding:36px 14px 32px}
+  .lp-h1{font-size:clamp(1.6rem,7.5vw,2rem)}
+  .lp-hero-sub{font-size:.88rem}
+  .lp-how,.lp-stats,.lp-comparator,.lp-trust{padding:32px 14px}
+  .lp-final-cta{padding:0 14px 32px}
+  .lp-wrap{padding:0 14px}
+  .lp-stat-card{padding:22px 10px}
+  .lp-bars{height:150px}
+  .lp-chart-area{padding:24px 16px}
+  .lp-cta-card{padding:36px 20px}
+  .lp-stats-grid{gap:10px}
+  .lp-trust-grid{gap:12px}
+  .lp-hero-badge{padding:12px 16px;gap:12px}
+  .lp-badge-num{font-size:1.5rem}
+  .lp-section-title{font-size:clamp(1.3rem,7vw,1.8rem)}
 }
 
 /* ════════════════════════════════════════════════════════════ */
@@ -1484,7 +1507,7 @@ body.dark .lp-trust-icon svg{stroke:#60A5FA}
     <div class="lp-blob lp-blob1"></div>
     <div class="lp-blob lp-blob2"></div>
     <div class="lp-hero-inner">
-      <h1 class="lp-h1" data-i18n="lp-h1">Haz crecer tu dinero<br/>sin ser experto en finanzas</h1>
+      <h1 class="lp-h1" data-i18n="lp-h1">Haz crecer tu dinero<br/>sin ser especialista en finanzas</h1>
       <p class="lp-hero-sub" data-i18n="lp-hero-sub">Te damos recomendaciones profesionales para que sepas exactamente en qué invertir. Tú decides y ejecutas, nosotros te orientamos en cada paso.</p>
       <div class="lp-hero-btns">
         <button onclick="switchPage('builder')" class="lp-btn-prim" data-i18n="lp-btn1">Construir mi portafolio</button>
@@ -3184,7 +3207,7 @@ const _i18n = {
     'ct-availability':'Disponible para colaboraciones académicas, proyectos fintech y análisis de portafolios.',
     /* ── Landing page ── */
     'lp-eyebrow':'Orientación para invertir · Sin costo',
-    'lp-h1':'Haz crecer tu dinero<br/>sin ser experto en finanzas',
+    'lp-h1':'Haz crecer tu dinero<br/>sin ser especialista en finanzas',
     'lp-hero-sub':'Te damos recomendaciones profesionales para que sepas exactamente en qué invertir. Tú decides y ejecutas, nosotros te orientamos en cada paso.',
     'lp-btn1':'Construir mi portafolio','lp-btn2':'Ver cómo funciona',
     'lp-badge-lbl':'Empresas analizadas<br/>en S&amp;P 500 + IPC México',
@@ -3325,7 +3348,7 @@ const _i18n = {
     'ct-availability':'Available for academic collaborations, fintech projects, and portfolio analysis.',
     /* ── Landing page ── */
     'lp-eyebrow':'Investment guidance · Free of charge',
-    'lp-h1':'Grow your money<br/>without being a finance expert',
+    'lp-h1':'Grow your money<br/>without any finance background',
     'lp-hero-sub':'We give you professional recommendations so you know exactly where to invest. You decide and execute — we guide you every step of the way.',
     'lp-btn1':'Build my portfolio','lp-btn2':'See how it works',
     'lp-badge-lbl':'Companies analyzed<br/>in S&amp;P 500 + Mexico IPC',
